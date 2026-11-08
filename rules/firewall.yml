@@ -1,0 +1,22 @@
+id: LH-F01
+title: Port scan blocked by firewall
+description: One source hit many different blocked destination ports.
+type: threshold
+severity: medium
+mitre: {tactic: Discovery, technique: T1046, name: Network Service Discovery}
+match: {source: firewall, outcome: failure}
+group_by: src_ip
+distinct: dst_port
+threshold: 20
+window: 120
+---
+id: LH-F02
+title: Connection attempts to remote-admin ports
+description: Repeated blocked attempts against SSH, RDP, SMB, WinRM or database ports.
+type: threshold
+severity: low
+mitre: {tactic: Lateral Movement, technique: T1021, name: Remote Services}
+match: {source: firewall, outcome: failure, dst_port: [22, 3389, 445, 5985, 5986, 1433, 3306, 5432, 6379]}
+group_by: src_ip
+threshold: 15
+window: 300

@@ -1,0 +1,106 @@
+id: LH-WN01
+title: Windows logon brute force
+description: Many failed logons (4625) from one source.
+type: threshold
+severity: medium
+mitre: {tactic: Credential Access, technique: T1110.001, name: "Brute Force: Password Guessing"}
+match: {source: windows, event_id: 4625}
+group_by: src_ip
+threshold: 10
+window: 300
+---
+id: LH-WN02
+title: Password spraying
+description: One source failed to log on as many different accounts — one password tried against many users.
+type: threshold
+severity: high
+mitre: {tactic: Credential Access, technique: T1110.003, name: "Brute Force: Password Spraying"}
+match: {source: windows, event_id: 4625}
+group_by: src_ip
+distinct: user
+threshold: 6
+window: 900
+---
+id: LH-WN03
+title: Encoded or obfuscated PowerShell
+description: PowerShell started with an encoded command, hidden window or download cradle.
+type: single
+severity: high
+mitre: {tactic: Execution, technique: T1059.001, name: "Command and Scripting Interpreter: PowerShell"}
+match:
+  source: windows
+  event_id: 4688
+  command|re: ["(?i)powershell.*\\s-(e|en|enc|encodedcommand)\\s+[A-Za-z0-9+/=]{20,}", "(?i)-w(indowstyle)?\\s+hidden", "(?i)(iex|invoke-expression).*(downloadstring|net\\.webclient|iwr)", "(?i)frombase64string"]
+---
+id: LH-WN04
+title: Account added to privileged Windows group
+description: Member added to Administrators / Domain Admins / Enterprise Admins.
+type: single
+severity: critical
+mitre: {tactic: Persistence, technique: T1098, name: Account Manipulation}
+match:
+  source: windows
+  event_id: [4728, 4732, 4756]
+  group|re: "(?i)(administrators|domain admins|enterprise admins|schema admins|backup operators)"
+---
+id: LH-WN05
+title: Security audit log cleared
+description: The Security event log was cleared (1102) — classic anti-forensics step.
+type: single
+severity: critical
+mitre: {tactic: Defense Evasion, technique: T1070.001, name: "Indicator Removal: Clear Windows Event Logs"}
+match: {source: windows, event_id: 1102}
+---
+id: LH-WN06
+title: Suspicious service installed
+description: A new service points to a script interpreter or a user-writable path.
+type: single
+severity: high
+mitre: {tactic: Persistence, technique: T1543.003, name: "Create or Modify System Process: Windows Service"}
+match:
+  source: windows
+  event_id: [7045, 4697]
+  command|re: ["(?i)(powershell|cmd\\.exe|mshta|rundll32|wscript|cscript)", "(?i)\\\\(temp|tmp|appdata|users\\\\public|programdata)\\\\"]
+---
+id: LH-WN07
+title: Windows user account created
+description: A new user account was created (4720).
+type: single
+severity: low
+mitre: {tactic: Persistence, technique: T1136.001, name: "Create Account: Local Account"}
+match: {source: windows, event_id: 4720}
+---
+id: LH-WN08
+title: Living-off-the-land binary abuse
+description: Built-in Windows binary used to download or execute remote code.
+type: single
+severity: high
+mitre: {tactic: Defense Evasion, technique: T1218, name: System Binary Proxy Execution}
+match:
+  source: windows
+  event_id: 4688
+  command|re: ["(?i)certutil.*-urlcache", "(?i)mshta(\\.exe)?\\s+(https?|javascript|vbscript):", "(?i)regsvr32.*/i:https?", "(?i)rundll32.*javascript:", "(?i)bitsadmin.*/transfer"]
+---
+id: LH-WN09
+title: Credential dumping from LSASS
+description: Tool or technique commonly used to dump LSASS memory or the SAM hive.
+type: single
+severity: critical
+mitre: {tactic: Credential Access, technique: T1003.001, name: "OS Credential Dumping: LSASS Memory"}
+match:
+  source: windows
+  event_id: 4688
+  command|re: ["(?i)mimikatz|sekurlsa", "(?i)procdump.*lsass", "(?i)comsvcs(\\.dll)?.*minidump", "(?i)reg(\\.exe)?\\s+save\\s+hklm\\\\(sam|security|system)"]
+---
+id: LH-WN10
+title: Spray success — failures then logon from same source
+description: A source that produced many failed logons later logs on successfully.
+type: sequence
+severity: critical
+mitre: {tactic: Initial Access, technique: T1078, name: Valid Accounts}
+group_by: src_ip
+window: 3600
+steps:
+  - match: {source: windows, event_id: 4625}
+    min_count: 5
+  - match: {source: windows, event_id: 4624}

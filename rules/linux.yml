@@ -1,0 +1,109 @@
+id: LH-L01
+title: SSH brute force
+description: Many failed SSH logins from one source address.
+type: threshold
+severity: medium
+mitre: {tactic: Credential Access, technique: T1110.001, name: "Brute Force: Password Guessing"}
+match: {source: linux_auth, action: [ssh_login, ssh_invalid_user], outcome: failure}
+group_by: src_ip
+threshold: 10
+window: 300
+---
+id: LH-L02
+title: SSH username enumeration
+description: One source tried many different usernames over SSH.
+type: threshold
+severity: medium
+mitre: {tactic: Reconnaissance, technique: T1589.003, name: "Gather Victim Identity Information: Employee Names"}
+match: {source: linux_auth, action: [ssh_login, ssh_invalid_user], outcome: failure}
+group_by: src_ip
+distinct: user
+threshold: 5
+window: 600
+---
+id: LH-L03
+title: SSH brute force followed by successful login
+description: Repeated SSH failures from a source, then a successful login from the same source — likely compromised credentials.
+type: sequence
+severity: critical
+mitre: {tactic: Initial Access, technique: T1078, name: Valid Accounts}
+group_by: src_ip
+window: 1800
+steps:
+  - match: {source: linux_auth, action: ssh_login, outcome: failure}
+    min_count: 5
+  - match: {source: linux_auth, action: ssh_login, outcome: success}
+---
+id: LH-L04
+title: Direct root SSH login
+description: Successful SSH login as root (should be disabled via PermitRootLogin no).
+type: single
+severity: high
+mitre: {tactic: Privilege Escalation, technique: T1078.003, name: "Valid Accounts: Local Accounts"}
+match: {source: linux_auth, action: ssh_login, outcome: success, user: root}
+---
+id: LH-L05
+title: Sensitive file accessed with sudo
+description: Credential or privilege configuration files read or edited through sudo.
+type: single
+severity: high
+mitre: {tactic: Credential Access, technique: T1003.008, name: "OS Credential Dumping: /etc/passwd and /etc/shadow"}
+match:
+  action: sudo
+  outcome: success
+  command|contains: ["/etc/shadow", "/etc/gshadow", "/etc/sudoers", ".ssh/authorized_keys", "/root/.ssh"]
+---
+id: LH-L06
+title: Local user account created
+description: A new local account was created.
+type: single
+severity: low
+mitre: {tactic: Persistence, technique: T1136.001, name: "Create Account: Local Account"}
+match:
+  source: linux_auth
+  action: user_created
+---
+id: LH-L07
+title: User added to privileged group
+description: An account was added to sudo/wheel/admin/root/docker — grants root-equivalent access.
+type: single
+severity: high
+mitre: {tactic: Privilege Escalation, technique: T1098, name: Account Manipulation}
+match:
+  source: linux_auth
+  action: group_member_added
+  group: [sudo, wheel, admin, root, docker, adm, lxd]
+---
+id: LH-L08
+title: Download-and-execute or persistence command
+description: Command pipes a remote download into a shell, or modifies cron/systemd for persistence.
+type: single
+severity: high
+mitre: {tactic: Execution, technique: T1059.004, name: "Command and Scripting Interpreter: Unix Shell"}
+match:
+  source: linux_auth
+  action: [sudo, cron]
+  command|re: ["(curl|wget)[^|;]*\\|\\s*(ba|z)?sh", "crontab\\s+-", "/etc/cron", "systemctl\\s+enable", "nc\\s+(-e|.*-c)\\s", "/dev/tcp/", "chmod\\s+\\+s"]
+---
+id: LH-L09
+title: Repeated sudo password failures
+description: A user repeatedly failed sudo authentication.
+type: threshold
+severity: medium
+mitre: {tactic: Privilege Escalation, technique: T1548.003, name: "Abuse Elevation Control Mechanism: Sudo"}
+match: {source: linux_auth, action: sudo, outcome: failure}
+group_by: user
+threshold: 3
+window: 600
+---
+id: LH-L10
+title: New account then added to privileged group
+description: The same account is created and then granted privileged group membership shortly after — backdoor account pattern.
+type: sequence
+severity: critical
+mitre: {tactic: Persistence, technique: T1136.001, name: "Create Account: Local Account"}
+group_by: user
+window: 3600
+steps:
+  - match: {source: linux_auth, action: user_created}
+  - match: {source: linux_auth, action: group_member_added, group: [sudo, wheel, admin, root, docker]}

@@ -1,0 +1,80 @@
+id: LH-W01
+title: SQL injection attempt
+description: Request contains SQL injection syntax.
+type: single
+severity: high
+mitre: {tactic: Initial Access, technique: T1190, name: Exploit Public-Facing Application}
+match:
+  source: web_access
+  url_decoded|re:
+    - "(?i)\\bunion\\b.{0,40}\\bselect\\b"
+    - "(?i)('|%27)\\s*(or|and)\\s*('?\\d+'?\\s*=\\s*'?\\d+|'[^']*'\\s*=\\s*')"
+    - "(?i)\\b(sleep|benchmark|pg_sleep)\\s*\\("
+    - "(?i)information_schema|xp_cmdshell|load_file\\s*\\("
+    - "(?i);\\s*(drop|insert|update|delete)\\s+"
+    - "(?i)'\\s*--"
+---
+id: LH-W02
+title: Cross-site scripting attempt
+description: Request contains script injection payload.
+type: single
+severity: medium
+mitre: {tactic: Initial Access, technique: T1190, name: Exploit Public-Facing Application}
+match:
+  source: web_access
+  url_decoded|re: ["(?i)<\\s*script", "(?i)javascript:", "(?i)on(error|load|mouseover)\\s*=", "(?i)<\\s*(img|svg|iframe)[^>]*>"]
+---
+id: LH-W03
+title: Path traversal / local file inclusion
+description: Request tries to escape the web root or read system files.
+type: single
+severity: high
+mitre: {tactic: Discovery, technique: T1083, name: File and Directory Discovery}
+match:
+  source: web_access
+  url_decoded|re: ["\\.\\./\\.\\./", "(?i)/etc/(passwd|shadow|hosts)", "(?i)\\b(c:|%systemroot%)\\\\windows", "(?i)php://(filter|input)", "(?i)\\.\\.\\\\"]
+---
+id: LH-W04
+title: Known attack tool user agent
+description: User-Agent belongs to a vulnerability scanner or exploitation tool.
+type: single
+severity: medium
+mitre: {tactic: Reconnaissance, technique: T1595.002, name: "Active Scanning: Vulnerability Scanning"}
+match:
+  source: web_access
+  user_agent|contains: [sqlmap, nikto, nmap, masscan, nuclei, gobuster, dirbuster, wpscan, hydra, zgrab, acunetix, "python-requests/2"]
+---
+id: LH-W05
+title: Web content discovery / scanning
+description: One client generated many 404 responses in a short time (directory brute forcing).
+type: threshold
+severity: medium
+mitre: {tactic: Reconnaissance, technique: T1595.003, name: "Active Scanning: Wordlist Scanning"}
+match: {source: web_access, status: 404}
+group_by: src_ip
+threshold: 30
+window: 120
+---
+id: LH-W06
+title: Web shell or command injection
+description: Request passes OS commands to the server or calls a known web-shell file.
+type: single
+severity: critical
+mitre: {tactic: Persistence, technique: T1505.003, name: "Server Software Component: Web Shell"}
+match:
+  source: web_access
+  url_decoded|re:
+    - "(?i)[?&](cmd|exec|command|c)=[^&]*(whoami|id|uname|cat|ls|wget|curl|bash|powershell)"
+    - "(?i)(;|\\||`|\\$\\()\\s*(whoami|id|uname -a|cat /etc|wget |curl )"
+    - "(?i)/(shell|c99|r57|wso|b374k)\\.(php|aspx?|jsp)"
+---
+id: LH-W07
+title: Successful access to admin or sensitive file
+description: Sensitive path returned 200 (exposed backup, git repo, env file or admin console).
+type: single
+severity: high
+mitre: {tactic: Credential Access, technique: T1552.001, name: "Unsecured Credentials: Credentials In Files"}
+match:
+  source: web_access
+  status: 200
+  url|re: ["(?i)/\\.env$", "(?i)/\\.git/(config|HEAD)", "(?i)\\.(sql|bak|old|zip)$", "(?i)/phpmyadmin", "(?i)/wp-config\\.php"]

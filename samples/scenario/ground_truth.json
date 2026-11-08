@@ -1,0 +1,72 @@
+{
+  "attack_start": 1793557800.0,
+  "stages": [
+    {
+      "stage": "Web reconnaissance & exploitation attempts",
+      "start": 1793565420.0,
+      "end": 1793565472.769037,
+      "expected_rules": [
+        "LH-W01",
+        "LH-W02",
+        "LH-W03",
+        "LH-W04",
+        "LH-W05",
+        "LH-W06",
+        "LH-W07"
+      ],
+      "description": "Nikto content discovery, exposed .env, sqlmap SQL injection, XSS, path traversal, web shell probe"
+    },
+    {
+      "stage": "Network port scan",
+      "start": 1793565532.769037,
+      "end": 1793565591.410431,
+      "expected_rules": [
+        "LH-F01"
+      ],
+      "description": "SYN scan of 60 ports against the perimeter"
+    },
+    {
+      "stage": "SSH brute force and account compromise",
+      "start": 1793565711.410431,
+      "end": 1793565824.860159,
+      "expected_rules": [
+        "LH-L01",
+        "LH-L02",
+        "LH-L03"
+      ],
+      "description": "42 password guesses, then successful login as bob from the attacker IP"
+    },
+    {
+      "stage": "Privilege escalation & persistence on Linux",
+      "start": 1793565884.860159,
+      "end": 1793566155.451064,
+      "expected_rules": [
+        "LH-L05",
+        "LH-L06",
+        "LH-L07",
+        "LH-L08",
+        "LH-L10",
+        "LH-U01"
+      ],
+      "description": "Read /etc/shadow, create 'backdoor' sudoer, download-and-execute, cron beacon"
+    },
+    {
+      "stage": "Windows password spray \u2192 credential dumping \u2192 persistence \u2192 log wiping",
+      "start": 1793566875.451064,
+      "end": 1793567537.248133,
+      "expected_rules": [
+        "LH-WN01",
+        "LH-WN02",
+        "LH-WN10",
+        "LH-WN03",
+        "LH-WN08",
+        "LH-WN09",
+        "LH-WN07",
+        "LH-WN04",
+        "LH-WN06",
+        "LH-WN05"
+      ],
+      "description": "Spray from internal pivot, svc_backup compromised, encoded PowerShell, certutil download, LSASS dump, admin account, malicious service, log cleared"
+    }
+  ]
+}

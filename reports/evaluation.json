@@ -1,0 +1,635 @@
+[
+  {
+    "seed": 1,
+    "events": 14710,
+    "events_per_second": 18563,
+    "alerts_total": 29,
+    "attack_alerts": 28,
+    "false_positives_7_days": 1,
+    "false_positives_holdout_2_days": 1,
+    "fp_rules": {
+      "LH-U01": 1
+    },
+    "expected_rules": 27,
+    "expected_rules_fired": 27,
+    "unexpected_rules_in_attack": [],
+    "stages": [
+      {
+        "stage": "Web reconnaissance & exploitation attempts",
+        "detected": true,
+        "rules_fired": [
+          "LH-W01",
+          "LH-W02",
+          "LH-W03",
+          "LH-W04",
+          "LH-W05",
+          "LH-W06",
+          "LH-W07"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 0.0
+      },
+      {
+        "stage": "Network port scan",
+        "detected": true,
+        "rules_fired": [
+          "LH-F01"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 18.230962991714478
+      },
+      {
+        "stage": "SSH brute force and account compromise",
+        "detected": true,
+        "rules_fired": [
+          "LH-L01",
+          "LH-L02",
+          "LH-L03"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 15.589569091796875
+      },
+      {
+        "stage": "Privilege escalation & persistence on Linux",
+        "detected": true,
+        "rules_fired": [
+          "LH-L05",
+          "LH-L06",
+          "LH-L07",
+          "LH-L08",
+          "LH-L10"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 52.139841079711914
+      },
+      {
+        "stage": "Windows password spray \u2192 credential dumping \u2192 persistence \u2192 log wiping",
+        "detected": true,
+        "rules_fired": [
+          "LH-WN01",
+          "LH-WN02",
+          "LH-WN03",
+          "LH-WN04",
+          "LH-WN05",
+          "LH-WN06",
+          "LH-WN07",
+          "LH-WN08",
+          "LH-WN09",
+          "LH-WN10"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 30.548935890197754
+      }
+    ],
+    "attack_incidents": [
+      {
+        "risk": 1067.0,
+        "severity": "critical",
+        "alerts": 17,
+        "tactics": [
+          "Reconnaissance",
+          "Initial Access",
+          "Execution",
+          "Persistence",
+          "Privilege Escalation",
+          "Defense Evasion",
+          "Credential Access",
+          "Discovery"
+        ],
+        "src_ip": [
+          "45.33.12.7"
+        ],
+        "user": [
+          "backdoor",
+          "bob"
+        ]
+      },
+      {
+        "risk": 676.0,
+        "severity": "critical",
+        "alerts": 11,
+        "tactics": [
+          "Initial Access",
+          "Execution",
+          "Persistence",
+          "Defense Evasion",
+          "Credential Access"
+        ],
+        "src_ip": [
+          "10.10.9.99"
+        ],
+        "user": [
+          "helpdesk2",
+          "svc_backup"
+        ]
+      }
+    ],
+    "alert_reduction": 0.929
+  },
+  {
+    "seed": 2,
+    "events": 15730,
+    "events_per_second": 26657,
+    "alerts_total": 29,
+    "attack_alerts": 28,
+    "false_positives_7_days": 1,
+    "false_positives_holdout_2_days": 1,
+    "fp_rules": {
+      "LH-U01": 1
+    },
+    "expected_rules": 27,
+    "expected_rules_fired": 27,
+    "unexpected_rules_in_attack": [],
+    "stages": [
+      {
+        "stage": "Web reconnaissance & exploitation attempts",
+        "detected": true,
+        "rules_fired": [
+          "LH-W01",
+          "LH-W02",
+          "LH-W03",
+          "LH-W04",
+          "LH-W05",
+          "LH-W06",
+          "LH-W07"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 0.0
+      },
+      {
+        "stage": "Network port scan",
+        "detected": true,
+        "rules_fired": [
+          "LH-F01"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 16.794931888580322
+      },
+      {
+        "stage": "SSH brute force and account compromise",
+        "detected": true,
+        "rules_fired": [
+          "LH-L01",
+          "LH-L02",
+          "LH-L03"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 12.05279803276062
+      },
+      {
+        "stage": "Privilege escalation & persistence on Linux",
+        "detected": true,
+        "rules_fired": [
+          "LH-L05",
+          "LH-L06",
+          "LH-L07",
+          "LH-L08",
+          "LH-L10"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 26.533586025238037
+      },
+      {
+        "stage": "Windows password spray \u2192 credential dumping \u2192 persistence \u2192 log wiping",
+        "detected": true,
+        "rules_fired": [
+          "LH-WN01",
+          "LH-WN02",
+          "LH-WN03",
+          "LH-WN04",
+          "LH-WN05",
+          "LH-WN06",
+          "LH-WN07",
+          "LH-WN08",
+          "LH-WN09",
+          "LH-WN10"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 32.56222105026245
+      }
+    ],
+    "attack_incidents": [
+      {
+        "risk": 1067.0,
+        "severity": "critical",
+        "alerts": 17,
+        "tactics": [
+          "Reconnaissance",
+          "Initial Access",
+          "Execution",
+          "Persistence",
+          "Privilege Escalation",
+          "Defense Evasion",
+          "Credential Access",
+          "Discovery"
+        ],
+        "src_ip": [
+          "45.33.12.7"
+        ],
+        "user": [
+          "backdoor",
+          "bob"
+        ]
+      },
+      {
+        "risk": 676.0,
+        "severity": "critical",
+        "alerts": 11,
+        "tactics": [
+          "Initial Access",
+          "Execution",
+          "Persistence",
+          "Defense Evasion",
+          "Credential Access"
+        ],
+        "src_ip": [
+          "10.10.9.99"
+        ],
+        "user": [
+          "helpdesk2",
+          "svc_backup"
+        ]
+      }
+    ],
+    "alert_reduction": 0.929
+  },
+  {
+    "seed": 3,
+    "events": 15540,
+    "events_per_second": 30141,
+    "alerts_total": 29,
+    "attack_alerts": 28,
+    "false_positives_7_days": 1,
+    "false_positives_holdout_2_days": 1,
+    "fp_rules": {
+      "LH-U01": 1
+    },
+    "expected_rules": 27,
+    "expected_rules_fired": 27,
+    "unexpected_rules_in_attack": [],
+    "stages": [
+      {
+        "stage": "Web reconnaissance & exploitation attempts",
+        "detected": true,
+        "rules_fired": [
+          "LH-W01",
+          "LH-W02",
+          "LH-W03",
+          "LH-W04",
+          "LH-W05",
+          "LH-W06",
+          "LH-W07"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 0.0
+      },
+      {
+        "stage": "Network port scan",
+        "detected": true,
+        "rules_fired": [
+          "LH-F01"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 12.622594118118286
+      },
+      {
+        "stage": "SSH brute force and account compromise",
+        "detected": true,
+        "rules_fired": [
+          "LH-L01",
+          "LH-L02",
+          "LH-L03"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 14.894339084625244
+      },
+      {
+        "stage": "Privilege escalation & persistence on Linux",
+        "detected": true,
+        "rules_fired": [
+          "LH-L05",
+          "LH-L06",
+          "LH-L07",
+          "LH-L08",
+          "LH-L10"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 31.397464990615845
+      },
+      {
+        "stage": "Windows password spray \u2192 credential dumping \u2192 persistence \u2192 log wiping",
+        "detected": true,
+        "rules_fired": [
+          "LH-WN01",
+          "LH-WN02",
+          "LH-WN03",
+          "LH-WN04",
+          "LH-WN05",
+          "LH-WN06",
+          "LH-WN07",
+          "LH-WN08",
+          "LH-WN09",
+          "LH-WN10"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 50.10444498062134
+      }
+    ],
+    "attack_incidents": [
+      {
+        "risk": 1067.0,
+        "severity": "critical",
+        "alerts": 17,
+        "tactics": [
+          "Reconnaissance",
+          "Initial Access",
+          "Execution",
+          "Persistence",
+          "Privilege Escalation",
+          "Defense Evasion",
+          "Credential Access",
+          "Discovery"
+        ],
+        "src_ip": [
+          "45.33.12.7"
+        ],
+        "user": [
+          "backdoor",
+          "bob"
+        ]
+      },
+      {
+        "risk": 676.0,
+        "severity": "critical",
+        "alerts": 11,
+        "tactics": [
+          "Initial Access",
+          "Execution",
+          "Persistence",
+          "Defense Evasion",
+          "Credential Access"
+        ],
+        "src_ip": [
+          "10.10.9.99"
+        ],
+        "user": [
+          "helpdesk2",
+          "svc_backup"
+        ]
+      }
+    ],
+    "alert_reduction": 0.929
+  },
+  {
+    "seed": 4,
+    "events": 16916,
+    "events_per_second": 26668,
+    "alerts_total": 28,
+    "attack_alerts": 28,
+    "false_positives_7_days": 0,
+    "false_positives_holdout_2_days": 0,
+    "fp_rules": {},
+    "expected_rules": 27,
+    "expected_rules_fired": 27,
+    "unexpected_rules_in_attack": [],
+    "stages": [
+      {
+        "stage": "Web reconnaissance & exploitation attempts",
+        "detected": true,
+        "rules_fired": [
+          "LH-W01",
+          "LH-W02",
+          "LH-W03",
+          "LH-W04",
+          "LH-W05",
+          "LH-W06",
+          "LH-W07"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 0.0
+      },
+      {
+        "stage": "Network port scan",
+        "detected": true,
+        "rules_fired": [
+          "LH-F01"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 16.464867115020752
+      },
+      {
+        "stage": "SSH brute force and account compromise",
+        "detected": true,
+        "rules_fired": [
+          "LH-L01",
+          "LH-L02",
+          "LH-L03"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 11.432969093322754
+      },
+      {
+        "stage": "Privilege escalation & persistence on Linux",
+        "detected": true,
+        "rules_fired": [
+          "LH-L05",
+          "LH-L06",
+          "LH-L07",
+          "LH-L08",
+          "LH-L10"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 51.704349994659424
+      },
+      {
+        "stage": "Windows password spray \u2192 credential dumping \u2192 persistence \u2192 log wiping",
+        "detected": true,
+        "rules_fired": [
+          "LH-WN01",
+          "LH-WN02",
+          "LH-WN03",
+          "LH-WN04",
+          "LH-WN05",
+          "LH-WN06",
+          "LH-WN07",
+          "LH-WN08",
+          "LH-WN09",
+          "LH-WN10"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 35.123491048812866
+      }
+    ],
+    "attack_incidents": [
+      {
+        "risk": 1067.0,
+        "severity": "critical",
+        "alerts": 17,
+        "tactics": [
+          "Reconnaissance",
+          "Initial Access",
+          "Execution",
+          "Persistence",
+          "Privilege Escalation",
+          "Defense Evasion",
+          "Credential Access",
+          "Discovery"
+        ],
+        "src_ip": [
+          "45.33.12.7"
+        ],
+        "user": [
+          "backdoor",
+          "bob"
+        ]
+      },
+      {
+        "risk": 676.0,
+        "severity": "critical",
+        "alerts": 11,
+        "tactics": [
+          "Initial Access",
+          "Execution",
+          "Persistence",
+          "Defense Evasion",
+          "Credential Access"
+        ],
+        "src_ip": [
+          "10.10.9.99"
+        ],
+        "user": [
+          "helpdesk2",
+          "svc_backup"
+        ]
+      }
+    ],
+    "alert_reduction": 0.929
+  },
+  {
+    "seed": 5,
+    "events": 16052,
+    "events_per_second": 25939,
+    "alerts_total": 29,
+    "attack_alerts": 28,
+    "false_positives_7_days": 1,
+    "false_positives_holdout_2_days": 1,
+    "fp_rules": {
+      "LH-U01": 1
+    },
+    "expected_rules": 27,
+    "expected_rules_fired": 27,
+    "unexpected_rules_in_attack": [],
+    "stages": [
+      {
+        "stage": "Web reconnaissance & exploitation attempts",
+        "detected": true,
+        "rules_fired": [
+          "LH-W01",
+          "LH-W02",
+          "LH-W03",
+          "LH-W04",
+          "LH-W05",
+          "LH-W06",
+          "LH-W07"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 0.0
+      },
+      {
+        "stage": "Network port scan",
+        "detected": true,
+        "rules_fired": [
+          "LH-F01"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 15.554961919784546
+      },
+      {
+        "stage": "SSH brute force and account compromise",
+        "detected": true,
+        "rules_fired": [
+          "LH-L01",
+          "LH-L02",
+          "LH-L03"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 18.43752694129944
+      },
+      {
+        "stage": "Privilege escalation & persistence on Linux",
+        "detected": true,
+        "rules_fired": [
+          "LH-L05",
+          "LH-L06",
+          "LH-L07",
+          "LH-L08",
+          "LH-L10"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 44.288264989852905
+      },
+      {
+        "stage": "Windows password spray \u2192 credential dumping \u2192 persistence \u2192 log wiping",
+        "detected": true,
+        "rules_fired": [
+          "LH-WN01",
+          "LH-WN02",
+          "LH-WN03",
+          "LH-WN04",
+          "LH-WN05",
+          "LH-WN06",
+          "LH-WN07",
+          "LH-WN08",
+          "LH-WN09",
+          "LH-WN10"
+        ],
+        "rules_missed": [],
+        "first_alert_delay_s": 39.729146003723145
+      }
+    ],
+    "attack_incidents": [
+      {
+        "risk": 1067.0,
+        "severity": "critical",
+        "alerts": 17,
+        "tactics": [
+          "Reconnaissance",
+          "Initial Access",
+          "Execution",
+          "Persistence",
+          "Privilege Escalation",
+          "Defense Evasion",
+          "Credential Access",
+          "Discovery"
+        ],
+        "src_ip": [
+          "45.33.12.7"
+        ],
+        "user": [
+          "backdoor",
+          "bob"
+        ]
+      },
+      {
+        "risk": 676.0,
+        "severity": "critical",
+        "alerts": 11,
+        "tactics": [
+          "Initial Access",
+          "Execution",
+          "Persistence",
+          "Defense Evasion",
+          "Credential Access"
+        ],
+        "src_ip": [
+          "10.10.9.99"
+        ],
+        "user": [
+          "helpdesk2",
+          "svc_backup"
+        ]
+      }
+    ],
+    "alert_reduction": 0.929
+  }
+]

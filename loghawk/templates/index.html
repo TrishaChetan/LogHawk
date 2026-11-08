@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LogHawk SIEM</title>
+<style>
+:root{--bg:#0e1116;--panel:#151a21;--panel2:#0b0e13;--line:#232a33;--text:#e5e9ef;--muted:#8a94a3;--accent:#e0a526;--critical:#ff4d6d;--high:#ff8452;--medium:#f2cc60;--low:#6cc3ff;--informational:#8a94a3}
+*{box-sizing:border-box}body{margin:0;font:14px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--text)}
+header{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--line)}
+h1{margin:0;font-size:20px}h1 small{color:var(--muted);font-weight:400;font-size:13px}
+nav{display:flex;gap:4px;padding:0 20px;border-bottom:1px solid var(--line);overflow-x:auto}
+nav button{background:none;border:0;border-bottom:2px solid transparent;color:var(--muted);padding:11px 14px;cursor:pointer;font-weight:600;white-space:nowrap}
+nav button.on{color:var(--text);border-color:var(--accent)}
+.btn{background:var(--panel);color:var(--text);border:1px solid var(--line);padding:7px 13px;border-radius:7px;cursor:pointer;font-weight:600}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#1a1200}
+main{padding:18px 20px;max-width:1300px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px}
+.kpi b{display:block;font-size:24px}.kpi span{color:var(--muted)}
+.sev{display:inline-block;padding:1px 8px;border-radius:9px;font-size:12px;font-weight:700;color:#111}
+.sev.critical{background:var(--critical)}.sev.high{background:var(--high)}.sev.medium{background:var(--medium)}.sev.low{background:var(--low)}.sev.informational{background:var(--informational)}
+.chip{display:inline-block;padding:1px 8px;border:1px solid var(--line);border-radius:9px;font-size:12px;margin:2px 3px 2px 0;background:var(--panel2)}
+.inc{cursor:pointer;margin-bottom:10px}.inc:hover{border-color:var(--accent)}
+.risk{height:6px;background:var(--panel2);border-radius:4px;overflow:hidden;margin:8px 0}.risk i{display:block;height:100%}
+table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;color:var(--muted);font-weight:600;padding:6px}td{border-top:1px solid var(--line);padding:6px;vertical-align:top}
+input[type=text]{width:100%;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:9px 11px;font:13px ui-monospace,monospace}
+code,pre{font:12px ui-monospace,monospace;color:#c9d1d9}pre{white-space:pre-wrap;word-break:break-all;background:var(--panel2);padding:8px;border-radius:6px;margin:4px 0}
+.muted{color:var(--muted)}.tl{border-left:2px solid var(--line);margin-left:6px;padding-left:16px}.tl .item{position:relative;margin-bottom:14px}
+.tl .item:before{content:"";position:absolute;left:-23px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--dot,#888)}
+.empty{text-align:center;padding:50px 10px;color:var(--muted)}
+.bars div{display:grid;grid-template-columns:minmax(120px,1fr) 2fr 30px;gap:8px;align-items:center;margin:5px 0;font-size:13px}
+.bars i{display:block;height:9px;background:var(--accent);border-radius:4px}
+</style>
+</head>
+<body>
+<header>
+  <h1>🦅 LogHawk <small>SIEM-lite · detection rules · UEBA · incident correlation</small></h1>
+  <div>
+    <button class="btn primary" onclick="demo()">Load demo scenario</button>
+    <label class="btn">Upload logs<input type="file" multiple hidden onchange="ingest(this)"></label>
+    <a class="btn" href="/api/export" style="text-decoration:none">Export</a>
+  </div>
+</header>
+<nav id="nav"><button class="on" data-v="overview">Overview</button><button data-v="incidents">Incidents</button><button data-v="alerts">Alerts</button><button data-v="search">Search</button><button data-v="rules">Rules</button></nav>
+<main id="view"></main>
+<script>
+const $=s=>document.querySelector(s);let view='overview',cache={};
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const t=ts=>new Date(ts*1000).toLocaleString([], {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit'});
+const col=s=>getComputedStyle(document.documentElement).getPropertyValue('--'+s);
+async function j(u,o){const r=await fetch(u,o);const d=await r.json();if(!r.ok)throw new Error(d.detail||r.status);return d}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b.dataset.v));
+function show(v){view=v;document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));render()}
+function loading(msg){$('#view').innerHTML=`<div class="empty">${msg}</div>`}
+async function demo(){loading('Generating 8 days of logs, training UEBA baseline, running detections…');await j('/api/demo',{method:'POST'});show('overview')}
+async function ingest(inp){const fd=new FormData();[...inp.files].forEach(f=>fd.append('files',f));loading('Parsing and analysing…');
+  try{await j('/api/ingest',{method:'POST',body:fd});show('overview')}catch(e){loading('Error: '+esc(e.message))}}
+const empty=`<div class="empty"><p>No data loaded.</p><p>Click <b>Load demo scenario</b> for a 7-day baseline + multi-stage attack, or upload <code>auth.log</code>, nginx <code>access.log</code>, UFW logs or Windows JSON events.</p></div>`;
+async function render(){
+  const s=await j('/api/stats');if(!s.events){$('#view').innerHTML=empty;return}
+  if(view==='overview')return overview(s); if(view==='incidents')return incidents(); if(view==='alerts')return alerts();
+  if(view==='search')return searchView(); if(view==='rules')return rules();
+}
+function bars(obj){const e=Object.entries(obj);if(!e.length)return '<p class="muted">—</p>';const m=Math.max(...e.map(x=>x[1]));
+  return '<div class="bars">'+e.sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div><span>${esc(k)}</span><i style="width:${v/m*100}%"></i><b>${v}</b></div>`).join('')+'</div>'}
+async function overview(s){const inc=await j('/api/incidents');
+  $('#view').innerHTML=`<div class="grid">
+   <div class="card kpi"><span>Events</span><b>${s.events.toLocaleString()}</b></div>
+   <div class="card kpi"><span>Alerts</span><b>${s.alerts}</b></div>
+   <div class="card kpi"><span>Incidents</span><b>${s.incidents}</b></div>
+   <div class="card kpi"><span>Critical / High</span><b style="color:var(--critical)">${(s.by_severity.critical||0)} / ${(s.by_severity.high||0)}</b></div>
+   <div class="card kpi"><span>Throughput</span><b>${(s.events_per_second||0).toLocaleString()}/s</b></div></div>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+   <div class="card"><h3>Events by source</h3>${bars(s.events_by_source)}</div>
+   <div class="card"><h3>Alerts by ATT&amp;CK tactic</h3>${bars(s.by_tactic)}</div>
+   <div class="card"><h3>Top detections</h3>${bars(Object.fromEntries(s.by_rule))}</div></div>
+  <h3>Top incidents</h3>${inc.slice(0,3).map(incCard).join('')||'<p class="muted">No incidents</p>'}
+  <p class="muted">UEBA model: ${s.ueba_trained?'trained ✓':'not trained (load the demo or ingest baseline logs and call /api/ueba/train)'} · ${s.rules_loaded} detection rules loaded</p>`}
+function incCard(i){const pct=Math.min(100,i.risk/12);
+  return `<div class="card inc" onclick="incident(${i.id})"><div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap">
+  <b>#${i.id} ${esc(i.title)}</b><span><span class="sev ${i.severity}">${i.severity}</span> <span class="muted">risk ${i.risk}</span></span></div>
+  <div class="risk"><i style="width:${pct}%;background:${col(i.severity)}"></i></div>
+  <div>${i.tactics.map(x=>`<span class="chip">${esc(x)}</span>`).join('')}</div>
+  <div class="muted" style="margin-top:6px">${t(i.start)} → ${t(i.end)} · ${i.alert_count} alerts · IPs: ${esc(i.entities.src_ip.join(', ')||'—')} · users: ${esc(i.entities.user.join(', ')||'—')} · hosts: ${esc(i.entities.host.join(', ')||'—')}</div></div>`}
+async function incidents(){const inc=await j('/api/incidents');$('#view').innerHTML=inc.map(incCard).join('')||'<div class="empty">No incidents</div>'}
+async function incident(id){const i=await j('/api/incidents/'+id);view='incidents';
+  $('#view').innerHTML=`<button class="btn" onclick="show('incidents')">← All incidents</button><h2>#${i.id} ${esc(i.title)}</h2>
+  <p><span class="sev ${i.severity}">${i.severity}</span> risk ${i.risk} · ${i.tactics.map(x=>`<span class="chip">${esc(x)}</span>`).join('')}</p>
+  <div class="tl">${i.alerts.map(a=>`<div class="item" style="--dot:${col(a.severity)}"><div><span class="muted">${t(a.ts)}</span> <span class="sev ${a.severity}">${a.severity}</span> <b>${esc(a.title)}</b> <span class="chip">${esc(a.rule_id)}</span> <span class="chip">${esc(a.technique)} ${esc(a.technique_name)}</span></div>
+  <div class="muted">${esc(a.description)}</div><div>${Object.entries(a.entities).map(([k,v])=>`<span class="chip">${k}: ${esc(v)}</span>`).join('')}</div>
+  <details><summary class="muted">Evidence (${a.evidence.length} of ${a.count})</summary>${a.evidence.map(e=>`<pre>${esc(e.message||`${e.src_ip} ${e.method} ${e.extra?.url_decoded||e.url} ${e.status} ${e.user_agent}`||JSON.stringify(e))}${e.command?'\n$ '+esc(e.command):''}</pre>`).join('')}</details></div>`).join('')}</div>`}
+async function alerts(){const a=await j('/api/alerts');
+  $('#view').innerHTML=`<table><thead><tr><th>Time</th><th>Severity</th><th>Rule</th><th>ATT&amp;CK</th><th>Entities</th><th>Detail</th></tr></thead><tbody>${a.map(x=>`<tr>
+  <td class="muted">${t(x.ts)}</td><td><span class="sev ${x.severity}">${x.severity}</span></td><td><b>${esc(x.title)}</b><br><span class="muted">${esc(x.rule_id)}</span></td>
+  <td>${esc(x.technique)}<br><span class="muted">${esc(x.tactic)}</span></td><td>${Object.entries(x.entities).map(([k,v])=>`<span class="chip">${k}: ${esc(v)}</span>`).join('')}</td>
+  <td class="muted">${esc(x.description)}</td></tr>`).join('')}</tbody></table>`}
+function searchView(){$('#view').innerHTML=`<input type="text" id="q" placeholder='e.g.  src_ip:45.33.12.7 action:ssh_login outcome:failure   ·   status>=400 source:web_access   ·   "etc/shadow"'>
+  <p class="muted">Terms are AND-ed · <code>NOT</code> negates · <code>*</code> wildcard · numeric <code>&gt; &lt; &gt;= &lt;=</code> · bare words search message/url/command</p><div id="res"></div>`;
+  $('#q').addEventListener('keydown',e=>{if(e.key==='Enter')runSearch()});$('#q').focus()}
+async function runSearch(){const r=await j('/api/search?q='+encodeURIComponent($('#q').value));
+  $('#res').innerHTML=`<p class="muted">${r.total} matching events (showing latest ${r.events.length})</p><table><tbody>${r.events.map(e=>`<tr><td class="muted" style="white-space:nowrap">${t(e.ts)}</td><td><span class="chip">${esc(e.source)}</span></td>
+  <td><span class="chip">${esc(e.action)}</span>${e.outcome?`<span class="chip">${esc(e.outcome)}</span>`:''}</td><td><code>${esc(e.message||`${e.src_ip} "${e.method} ${e.url}" ${e.status} "${e.user_agent}"`||e.command)}</code></td></tr>`).join('')}</tbody></table>`}
+async function rules(){const r=await j('/api/rules');
+  $('#view').innerHTML=`<table><thead><tr><th>ID</th><th>Title</th><th>Type</th><th>Severity</th><th>ATT&amp;CK</th></tr></thead><tbody>${r.map(x=>`<tr><td><code>${esc(x.id)}</code></td>
+  <td><b>${esc(x.title)}</b><br><span class="muted">${esc(x.description)}</span></td><td>${esc(x.type)}${x.threshold?` ≥${x.threshold}`:''}${x.window?` / ${x.window}s`:''}</td>
+  <td><span class="sev ${x.severity}">${x.severity}</span></td><td>${esc(x.mitre.technique)} <span class="muted">${esc(x.mitre.name)}</span><br><span class="muted">${esc(x.mitre.tactic)}</span></td></tr>`).join('')}</tbody></table>`}
+render();
+</script>
+</body>
+</html>

