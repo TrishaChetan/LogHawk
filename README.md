@@ -4,6 +4,8 @@ LogHawk ingests logs from Linux servers, web servers, firewalls and Windows, nor
 runs **29 Sigma-style detection rules** plus a **machine-learning behaviour model (UEBA)**, and correlates the
 resulting alerts into **incidents** ranked by risk and mapped to the **MITRE ATT&CK** kill chain.
 
+![tests](https://github.com/TrishaChetan/LogHawk/actions/workflows/tests.yml/badge.svg)
+
 > Final-year cybersecurity project · Python · scikit-learn · FastAPI · YAML rules
 
 ## What it does
