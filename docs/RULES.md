@@ -71,4 +71,17 @@ steps:
   - match: {source: web_access, url|startswith: "/admin", method: POST, status: 302}
 ```
 
-Restart the API (or re-run the CLI) to load new rules; `python -m loghawk.cli rules` validates them.
+Restart the API (or re-run the CLI) to load new rules.
+
+## Linting your rules
+
+```bash
+python -m loghawk.cli lint-rules              # bundled rules/
+python -m loghawk.cli lint-rules my_rules/    # your own directory
+python -m loghawk.cli lint-rules --strict     # fail on warnings too (good for CI)
+```
+
+The linter reports every problem at once instead of stopping at the first: unknown modifiers, invalid regexes,
+bad severities, duplicate ids, sequence rules with fewer than two steps — and, most importantly, **field names no
+parser ever sets** (e.g. `Src_IP` instead of `src_ip`). Those compile fine but can never match, so without the
+linter they fail silently.

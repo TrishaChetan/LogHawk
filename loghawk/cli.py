@@ -5,14 +5,17 @@
     python -m loghawk.cli train-ueba baseline/*.log --tz 5.5
     python -m loghawk.cli search auth.log 'action:ssh_login outcome:success user:root'
     python -m loghawk.cli rules
+    python -m loghawk.cli lint-rules [rules_dir] [--strict]
 """
 from __future__ import annotations
 
 import argparse
 import json
+import sys
 from datetime import datetime
 
 from .generator import LogGen
+from .lint import lint_directory
 from .parsers import parse_file
 from .pipeline import analyse_files, load_ueba, train_ueba
 from .rules import load_rules
@@ -30,6 +33,9 @@ def main(argv=None):
     t = sub.add_parser("train-ueba"); t.add_argument("files", nargs="+"); t.add_argument("--tz", type=float, default=0.0, help="UTC offset of working hours, e.g. 5.5 for IST")
     s = sub.add_parser("search"); s.add_argument("file"); s.add_argument("query")
     sub.add_parser("rules")
+    lr = sub.add_parser("lint-rules", help="check rule files for mistakes")
+    lr.add_argument("directory", nargs="?", help="rules directory (default: bundled rules/)")
+    lr.add_argument("--strict", action="store_true", help="treat warnings as errors")
     args = ap.parse_args(argv)
 
     if args.cmd == "generate":
@@ -38,6 +44,16 @@ def main(argv=None):
         events = [e for f in args.files for e in parse_file(f)]
         u = train_ueba(events, tz_offset_h=args.tz)
         print(f"UEBA trained on {len(events)} events, {len(u.user_mean)} users")
+    elif args.cmd == "lint-rules":
+        n, problems = lint_directory(args.directory) if args.directory else lint_directory()
+        for p in problems:
+            color = "\033[91m" if p.level == "error" else "\033[93m"
+            print(f"{color}{p}{R}")
+        errors = sum(p.level == "error" for p in problems)
+        warnings = len(problems) - errors
+        print(f"{n} rules checked · {errors} error(s) · {warnings} warning(s)")
+        if errors or (args.strict and warnings):
+            sys.exit(1)
     elif args.cmd == "rules":
         for r in load_rules():
             print(f"{r.id:<8} {r.severity:<9} {r.type:<10} {r.mitre.get('technique', ''):<11} {r.title}")
