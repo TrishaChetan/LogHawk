@@ -73,6 +73,19 @@ steps:
 
 Restart the API (or re-run the CLI) to load new rules.
 
+## Testing a rule against real logs
+
+```bash
+python -m loghawk.cli test-rule LH-L03 samples/scenario/auth.log
+python -m loghawk.cli test-rule my_rule.yml /var/log/auth.log --show 10
+```
+
+`test-rule` runs one rule (by id or from a `.yml` file) through the real streaming engine and explains the outcome:
+how many events each condition or sequence step matched, a few sample matching events, the alerts it would raise,
+and a verdict — **FIRES**, **NO MATCH** (conditions never match — check field values), **PARTIAL** (a sequence step
+never matched) or **MATCHES BUT DOESN'T FIRE** (threshold, window or group_by too strict). It exits 0 when the rule
+fires and 2 when it doesn't, so it can be used in CI against a sample log.
+
 ## Linting your rules
 
 ```bash

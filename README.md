@@ -37,7 +37,7 @@ resulting alerts into **incidents** ranked by risk and mapped to the **MITRE ATT
 | Firewall | port scan (distinct ports), remote-admin port probing | T1046, T1021 |
 | UEBA | anomalous user behaviour | T1078 |
 
-Write your own: drop a `.yml` file in `rules/` — see [docs/RULES.md](docs/RULES.md). Check it with `python -m loghawk.cli lint-rules`, which catches typos in field names that would otherwise make a rule silently never match.
+Write your own: drop a `.yml` file in `rules/` — see [docs/RULES.md](docs/RULES.md). Try it on real logs with `python -m loghawk.cli test-rule <id-or-file> <logfile>`, which shows what matched and why it did or didn't fire. Check it with `python -m loghawk.cli lint-rules`, which catches typos in field names that would otherwise make a rule silently never match.
 
 ## Quick start
 

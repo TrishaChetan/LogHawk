@@ -6,6 +6,7 @@
     python -m loghawk.cli search auth.log 'action:ssh_login outcome:success user:root'
     python -m loghawk.cli rules
     python -m loghawk.cli lint-rules [rules_dir] [--strict]
+    python -m loghawk.cli test-rule LH-001 auth.log [--show 10]
 """
 from __future__ import annotations
 
@@ -19,6 +20,7 @@ from .lint import lint_directory
 from .parsers import parse_file
 from .pipeline import analyse_files, load_ueba, train_ueba
 from .rules import load_rules
+from .ruletest import format_report, test_rule_on_files
 from .search import search
 
 C = {"critical": "\033[95m", "high": "\033[91m", "medium": "\033[93m", "low": "\033[96m", "informational": "\033[90m"}
@@ -36,6 +38,10 @@ def main(argv=None):
     lr = sub.add_parser("lint-rules", help="check rule files for mistakes")
     lr.add_argument("directory", nargs="?", help="rules directory (default: bundled rules/)")
     lr.add_argument("--strict", action="store_true", help="treat warnings as errors")
+    tr = sub.add_parser("test-rule", help="run one rule against log files and explain the result")
+    tr.add_argument("rule", help="rule id (e.g. LH-001) or path to a .yml rule file")
+    tr.add_argument("files", nargs="+")
+    tr.add_argument("--show", type=int, default=5, help="number of sample matching events to print")
     args = ap.parse_args(argv)
 
     if args.cmd == "generate":
@@ -54,6 +60,13 @@ def main(argv=None):
         print(f"{n} rules checked · {errors} error(s) · {warnings} warning(s)")
         if errors or (args.strict and warnings):
             sys.exit(1)
+    elif args.cmd == "test-rule":
+        try:
+            rep = test_rule_on_files(args.rule, args.files, samples=args.show)
+        except (ValueError, KeyError) as e:
+            ap.error(str(e))
+        print(format_report(rep))
+        sys.exit(0 if rep.alerts else 2)
     elif args.cmd == "rules":
         for r in load_rules():
             print(f"{r.id:<8} {r.severity:<9} {r.type:<10} {r.mitre.get('technique', ''):<11} {r.title}")
