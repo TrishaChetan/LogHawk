@@ -7,6 +7,7 @@
     python -m loghawk.cli rules
     python -m loghawk.cli lint-rules [rules_dir] [--strict]
     python -m loghawk.cli test-rule LH-001 auth.log [--show 10]
+    python -m loghawk.cli watch /var/log/auth.log access.log [--from-start] [--min-severity high] [--jsonl alerts.jsonl]
 """
 from __future__ import annotations
 
@@ -22,6 +23,7 @@ from .pipeline import analyse_files, load_ueba, train_ueba
 from .rules import load_rules
 from .ruletest import format_report, test_rule_on_files
 from .search import search
+from .watch import alert_jsonl, watch
 
 C = {"critical": "\033[95m", "high": "\033[91m", "medium": "\033[93m", "low": "\033[96m", "informational": "\033[90m"}
 R = "\033[0m"
@@ -42,6 +44,11 @@ def main(argv=None):
     tr.add_argument("rule", help="rule id (e.g. LH-001) or path to a .yml rule file")
     tr.add_argument("files", nargs="+")
     tr.add_argument("--show", type=int, default=5, help="number of sample matching events to print")
+    w = sub.add_parser("watch", help="follow log files and alert in real time (like tail -F)")
+    w.add_argument("files", nargs="+")
+    w.add_argument("--from-start", action="store_true", help="process existing content first instead of only new lines")
+    w.add_argument("--min-severity", default="low", choices=["low", "medium", "high", "critical"])
+    w.add_argument("--jsonl", metavar="FILE", help="also append alerts to this JSON Lines file")
     args = ap.parse_args(argv)
 
     if args.cmd == "generate":
@@ -67,6 +74,26 @@ def main(argv=None):
             ap.error(str(e))
         print(format_report(rep))
         sys.exit(0 if rep.alerts else 2)
+    elif args.cmd == "watch":
+        out = open(args.jsonl, "a", encoding="utf-8") if args.jsonl else None
+
+        def on_alert(a):
+            ents = " ".join(f"{k}={v}" for k, v in a.entities.items())
+            stamp = datetime.fromtimestamp(a.ts).strftime("%H:%M:%S")
+            print(f"{C.get(a.severity, '')}{stamp} [{a.severity.upper():<8}] {a.rule_id} {a.title}{R}  {ents}", flush=True)
+            if out:
+                out.write(alert_jsonl(a) + "\n")
+                out.flush()
+
+        print(f"watching {', '.join(args.files)} … Ctrl+C to stop", flush=True)
+        try:
+            stats = watch(args.files, on_alert, from_start=args.from_start, min_severity=args.min_severity)
+        except KeyboardInterrupt:
+            stats = None
+        finally:
+            if out:
+                out.close()
+        print("\nstopped" + (f" · {stats['events']} events · {stats['alerts']} alerts" if stats else ""))
     elif args.cmd == "rules":
         for r in load_rules():
             print(f"{r.id:<8} {r.severity:<9} {r.type:<10} {r.mitre.get('technique', ''):<11} {r.title}")

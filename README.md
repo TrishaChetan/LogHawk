@@ -60,7 +60,12 @@ python -m loghawk.cli train-ueba baseline/auth.log baseline/win.jsonl --tz 5.5
 python -m loghawk.cli analyze samples/scenario/*.log samples/scenario/windows_security.jsonl
 python -m loghawk.cli search samples/scenario/auth.log 'action:sudo command:*shadow*'
 python -m loghawk.cli rules
+python -m loghawk.cli watch /var/log/auth.log /var/log/nginx/access.log --min-severity high --jsonl alerts.jsonl
 ```
+
+**Live mode** — `watch` follows log files like `tail -F` (survives logrotate and copytruncate, waits for files
+that don't exist yet) and pushes every new line through the streaming rule engine, printing alerts the moment
+they fire. `--from-start` replays existing content first; `--jsonl` appends alerts for a SIEM or script.
 
 Docker: `docker build -t loghawk . && docker run -p 8000:8000 loghawk`
 
