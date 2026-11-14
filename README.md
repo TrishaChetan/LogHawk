@@ -60,8 +60,14 @@ python -m loghawk.cli train-ueba baseline/auth.log baseline/win.jsonl --tz 5.5
 python -m loghawk.cli analyze samples/scenario/*.log samples/scenario/windows_security.jsonl
 python -m loghawk.cli search samples/scenario/auth.log 'action:sudo command:*shadow*'
 python -m loghawk.cli rules
+python -m loghawk.cli coverage --navigator layer.json
 python -m loghawk.cli watch /var/log/auth.log /var/log/nginx/access.log --min-severity high --jsonl alerts.jsonl
 ```
+
+**ATT&CK coverage** — `coverage` shows which MITRE ATT&CK tactics and techniques the rules detect, how many rules
+cover each, and the gaps (currently Collection, Command and Control, Exfiltration and Impact). `--navigator` writes an
+ATT&CK Navigator layer you can upload at https://mitre-attack.github.io/attack-navigator/ to see a heat map; the same
+data is at `GET /api/coverage` and `GET /api/coverage/navigator`.
 
 **Live mode** — `watch` follows log files like `tail -F` (survives logrotate and copytruncate, waits for files
 that don't exist yet) and pushes every new line through the streaming rule engine, printing alerts the moment

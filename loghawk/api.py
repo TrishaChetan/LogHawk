@@ -114,6 +114,20 @@ def do_search(q: str = "", limit: int = 200):
     return {"total": total, "events": [e.to_dict() for e in hits]}
 
 
+@app.get("/api/coverage")
+def coverage():
+    """MITRE ATT&CK coverage of the loaded rules, including gaps."""
+    from .coverage import compute
+    return compute()
+
+
+@app.get("/api/coverage/navigator")
+def coverage_navigator():
+    """ATT&CK Navigator layer for the loaded rules (upload it at mitre-attack.github.io/attack-navigator)."""
+    from .coverage import compute, navigator_layer
+    return navigator_layer(compute())
+
+
 @app.get("/api/rules")
 def rules():
     return [{"id": r.id, "title": r.title, "type": r.type, "severity": r.severity, "mitre": r.mitre,

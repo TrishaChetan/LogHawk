@@ -24,6 +24,7 @@ from .rules import load_rules
 from .ruletest import format_report, test_rule_on_files
 from .search import search
 from .watch import alert_jsonl, watch
+from .coverage import compute as compute_coverage, format_coverage, write_navigator
 
 C = {"critical": "\033[95m", "high": "\033[91m", "medium": "\033[93m", "low": "\033[96m", "informational": "\033[90m"}
 R = "\033[0m"
@@ -37,6 +38,9 @@ def main(argv=None):
     t = sub.add_parser("train-ueba"); t.add_argument("files", nargs="+"); t.add_argument("--tz", type=float, default=0.0, help="UTC offset of working hours, e.g. 5.5 for IST")
     s = sub.add_parser("search"); s.add_argument("file"); s.add_argument("query")
     sub.add_parser("rules")
+    cv = sub.add_parser("coverage", help="MITRE ATT&CK coverage of the rules, with gaps")
+    cv.add_argument("--navigator", metavar="FILE", help="also write an ATT&CK Navigator layer (JSON)")
+    cv.add_argument("--json", metavar="FILE", help="write the coverage report as JSON")
     lr = sub.add_parser("lint-rules", help="check rule files for mistakes")
     lr.add_argument("directory", nargs="?", help="rules directory (default: bundled rules/)")
     lr.add_argument("--strict", action="store_true", help="treat warnings as errors")
@@ -94,6 +98,14 @@ def main(argv=None):
             if out:
                 out.close()
         print("\nstopped" + (f" · {stats['events']} events · {stats['alerts']} alerts" if stats else ""))
+    elif args.cmd == "coverage":
+        c = compute_coverage()
+        print(format_coverage(c))
+        if args.navigator:
+            write_navigator(c, args.navigator)
+            print(f"\nNavigator layer -> {args.navigator} (upload at https://mitre-attack.github.io/attack-navigator/)")
+        if args.json:
+            json.dump(c, open(args.json, "w"), indent=2)
     elif args.cmd == "rules":
         for r in load_rules():
             print(f"{r.id:<8} {r.severity:<9} {r.type:<10} {r.mitre.get('technique', ''):<11} {r.title}")
