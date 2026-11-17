@@ -10,7 +10,8 @@ from loghawk.rules import Rule
 
 def test_bundled_rules_coverage():
     c = compute()
-    assert c["rules"] >= 29
+    assert c["rules"] >= 39
+    assert c["gaps"] == []                                  # every observable tactic has a rule
     assert c["tactics_total"] == len(TACTICS) == 14
     assert "Resource Development" not in c["gaps"]          # attacker-side, never a gap
     covered = {r["tactic"] for r in c["tactics"] if r["rules"]}

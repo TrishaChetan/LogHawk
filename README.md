@@ -1,7 +1,7 @@
 # 🦅 LogHawk — SIEM-lite with Detection Rules, UEBA and Incident Correlation
 
 LogHawk ingests logs from Linux servers, web servers, firewalls and Windows, normalises them into one schema,
-runs **29 Sigma-style detection rules** plus a **machine-learning behaviour model (UEBA)**, and correlates the
+runs **39 Sigma-style detection rules** plus a **machine-learning behaviour model (UEBA)**, and correlates the
 resulting alerts into **incidents** ranked by risk and mapped to the **MITRE ATT&CK** kill chain.
 
 ![tests](https://github.com/TrishaChetan/LogHawk/actions/workflows/tests.yml/badge.svg)
@@ -27,14 +27,14 @@ resulting alerts into **incidents** ranked by risk and mapped to the **MITRE ATT
 | **Search** | Mini query language: `src_ip:45.33.12.7 action:ssh_login NOT outcome:success`, `status>=400`, wildcards |
 | **Interfaces** | SOC web console, REST API, CLI |
 
-## Rule coverage (29 rules)
+## Rule coverage (39 rules)
 
 | Area | Rules | ATT&CK examples |
 |---|---|---|
-| Linux | SSH brute force, username enumeration, **brute force → success** (sequence), root login, `/etc/shadow` via sudo, new user, privileged group add, **new user → sudo group** (sequence), download-and-execute / cron persistence, sudo failures | T1110.001, T1078, T1003.008, T1136.001, T1098, T1059.004 |
-| Web | SQL injection, XSS, path traversal/LFI, attack-tool user agents, content discovery (404 bursts), web shell / command injection, exposed `.env`/`.git`/backups | T1190, T1505.003, T1595, T1552.001 |
-| Windows | logon brute force, **password spraying** (distinct users), **spray → success** (sequence), encoded PowerShell, privileged group add, audit log cleared, suspicious service, LOLBins (certutil, mshta, regsvr32), LSASS dumping, new account | T1110.003, T1059.001, T1218, T1003.001, T1070.001, T1543.003 |
-| Firewall | port scan (distinct ports), remote-admin port probing | T1046, T1021 |
+| Linux | SSH brute force, username enumeration, **brute force → success** (sequence), root login, `/etc/shadow` via sudo, new user, privileged group add, **new user → sudo group** (sequence), download-and-execute / cron persistence, sudo failures, data archived for staging, `curl | sh` tool downloads, scp/rsync/curl/netcat exfiltration, destructive commands (`rm -rf /`, `shred`, `dd` over a disk) | T1110.001, T1078, T1003.008, T1136.001, T1098, T1059.004, T1560.001, T1105, T1048, T1485 |
+| Web | SQL injection, XSS, path traversal/LFI, attack-tool user agents, content discovery (404 bursts), web shell / command injection, exposed `.env`/`.git`/backups, very large downloads (>100 MB) | T1190, T1505.003, T1595, T1552.001, T1048.003 |
+| Windows | logon brute force, **password spraying** (distinct users), **spray → success** (sequence), encoded PowerShell, privileged group add, audit log cleared, suspicious service, LOLBins (certutil, mshta, regsvr32), LSASS dumping, new account, files compressed for staging, PowerShell/curl download cradles, **shadow copy / backup deletion** (ransomware), mass account deletion | T1110.003, T1059.001, T1218, T1003.001, T1070.001, T1543.003, T1560.001, T1105, T1490, T1531 |
+| Firewall | port scan (distinct ports), remote-admin port probing, allowed traffic on C2/Tor ports | T1046, T1021, T1571 |
 | UEBA | anomalous user behaviour | T1078 |
 
 Write your own: drop a `.yml` file in `rules/` — see [docs/RULES.md](docs/RULES.md). Try it on real logs with `python -m loghawk.cli test-rule <id-or-file> <logfile>`, which shows what matched and why it did or didn't fire. Check it with `python -m loghawk.cli lint-rules`, which catches typos in field names that would otherwise make a rule silently never match.
@@ -65,7 +65,7 @@ python -m loghawk.cli watch /var/log/auth.log /var/log/nginx/access.log --min-se
 ```
 
 **ATT&CK coverage** — `coverage` shows which MITRE ATT&CK tactics and techniques the rules detect, how many rules
-cover each, and the gaps (currently Collection, Command and Control, Exfiltration and Impact). `--navigator` writes an
+cover each, and any gaps — the bundled rules now cover all 13 tactics that are visible in logs (Resource Development happens on the attacker's side). `--navigator` writes an
 ATT&CK Navigator layer you can upload at https://mitre-attack.github.io/attack-navigator/ to see a heat map; the same
 data is at `GET /api/coverage` and `GET /api/coverage/navigator`.
 

@@ -107,3 +107,54 @@ window: 3600
 steps:
   - match: {source: linux_auth, action: user_created}
   - match: {source: linux_auth, action: group_member_added, group: [sudo, wheel, admin, root, docker]}
+---
+id: LH-L11
+title: Sensitive data archived with sudo
+description: tar/zip/7z run as root over home, web-root, /etc or database directories — staging data before taking it out.
+type: single
+severity: medium
+mitre: {tactic: Collection, technique: T1560.001, name: "Archive Collected Data: Archive via Utility"}
+match:
+  source: linux_auth
+  action: sudo
+  command|re: ["(?i)\\b(tar|zip|7z|7za|rar|gzip)\\b.*\\s(/home|/root|/etc|/var/www|/var/lib/(mysql|postgresql)|/srv)\\b"]
+---
+id: LH-L12
+title: Download piped straight into a shell
+description: curl or wget output executed directly (curl ... | sh) — a common way to pull down attacker tooling.
+type: single
+severity: high
+mitre: {tactic: Command and Control, technique: T1105, name: Ingress Tool Transfer}
+match:
+  source: linux_auth
+  action: sudo
+  command|re: ["(?i)\\b(curl|wget)\\b[^|]*\\|\\s*(sudo\\s+)?(ba|z|da)?sh\\b", "(?i)\\b(curl|wget)\\b.*(-o|-O|--output)\\s*/(tmp|dev/shm|var/tmp)/"]
+---
+id: LH-L13
+title: Data sent to a remote host from a privileged shell
+description: scp/rsync to a remote target, curl uploads, or netcat fed from a file, run with sudo.
+type: single
+severity: high
+mitre: {tactic: Exfiltration, technique: T1048, name: Exfiltration Over Alternative Protocol}
+match:
+  source: linux_auth
+  action: sudo
+  command|re:
+    - "(?i)\\b(scp|rsync)\\b.*\\s\\S+@[\\w.-]+:"
+    - "(?i)\\bcurl\\b.*(\\s-T\\s|--upload-file|--data-binary\\s+@|\\s-F\\s+\\S+=@)"
+    - "(?i)\\b(nc|ncat|netcat)\\b.*\\s\\d{2,5}\\s*<"
+---
+id: LH-L14
+title: Destructive command run as root
+description: Recursive delete of system or data paths, shred, or zeroing a disk — data destruction or sabotage.
+type: single
+severity: critical
+mitre: {tactic: Impact, technique: T1485, name: Data Destruction}
+match:
+  source: linux_auth
+  action: sudo
+  command|re:
+    - "(?i)\\brm\\s+(-[a-z]*r[a-z]*f|-[a-z]*f[a-z]*r)[a-z]*\\s+(--no-preserve-root\\s+)?(/|/\\*|/(etc|home|var|usr|srv|opt|root|boot)(/\\S*)?)(\\s|$)"
+    - "(?i)\\bshred\\b"
+    - "(?i)\\bdd\\b.*if=/dev/(zero|urandom|random).*of=/dev/(sd|nvme|vd|xvd|hd)"
+    - "(?i)\\bmkfs(\\.\\w+)?\\s+/dev/"

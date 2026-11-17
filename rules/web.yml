@@ -78,3 +78,14 @@ match:
   source: web_access
   status: 200
   url|re: ["(?i)/\\.env$", "(?i)/\\.git/(config|HEAD)", "(?i)\\.(sql|bak|old|zip)$", "(?i)/phpmyadmin", "(?i)/wp-config\\.php"]
+---
+id: LH-W08
+title: Very large download from the web server
+description: A single response over 100 MB — a database dump, backup or file share being pulled out over HTTP.
+type: single
+severity: medium
+mitre: {tactic: Exfiltration, technique: T1048.003, name: "Exfiltration Over Unencrypted Non-C2 Protocol"}
+match:
+  source: web_access
+  status: [200, 206]
+  bytes|gte: 104857600

@@ -20,3 +20,14 @@ match: {source: firewall, outcome: failure, dst_port: [22, 3389, 445, 5985, 5986
 group_by: src_ip
 threshold: 15
 window: 300
+---
+id: LH-F03
+title: Allowed traffic on common C2 / Tor ports
+description: Firewall allowed connections on ports used by Metasploit, IRC botnets and Tor relays.
+type: threshold
+severity: medium
+mitre: {tactic: Command and Control, technique: T1571, name: Non-Standard Port}
+match: {source: firewall, outcome: success, dst_port: [4444, 4445, 1337, 31337, 6666, 6667, 6668, 6669, 9001, 9030, 9050, 9150]}
+group_by: [src_ip, dst_port]
+threshold: 3
+window: 600

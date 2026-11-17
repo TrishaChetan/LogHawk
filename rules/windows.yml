@@ -104,3 +104,59 @@ steps:
   - match: {source: windows, event_id: 4625}
     min_count: 5
   - match: {source: windows, event_id: 4624}
+---
+id: LH-WN11
+title: Files compressed for staging
+description: Archive tool or Compress-Archive packing user folders, shares or documents.
+type: single
+severity: medium
+mitre: {tactic: Collection, technique: T1560.001, name: "Archive Collected Data: Archive via Utility"}
+match:
+  source: windows
+  event_id: 4688
+  command|re:
+    - "(?i)compress-archive\\b"
+    - "(?i)\\b(7z|7za|7zr|rar|winrar)(\\.exe)?\"?\\s+a\\s"
+    - "(?i)\\bmakecab(\\.exe)?\\s"
+---
+id: LH-WN12
+title: PowerShell or curl downloading a file
+description: Download cradles (Net.WebClient, Invoke-WebRequest -OutFile, Start-BitsTransfer, curl -o) pulling tools onto the host.
+type: single
+severity: high
+mitre: {tactic: Command and Control, technique: T1105, name: Ingress Tool Transfer}
+match:
+  source: windows
+  event_id: 4688
+  command|re:
+    - "(?i)net\\.webclient.*download(string|file|data)"
+    - "(?i)\\b(invoke-webrequest|iwr|wget)\\b.*-outfile"
+    - "(?i)start-bitstransfer"
+    - "(?i)\\bcurl(\\.exe)?\\b.*\\s(-o|--output)\\s"
+---
+id: LH-WN13
+title: Shadow copies or backups deleted
+description: vssadmin/wmic/wbadmin/bcdedit used to remove restore points — almost always ransomware preparing to encrypt.
+type: single
+severity: critical
+mitre: {tactic: Impact, technique: T1490, name: Inhibit System Recovery}
+match:
+  source: windows
+  event_id: 4688
+  command|re:
+    - "(?i)vssadmin(\\.exe)?\\s+(delete\\s+shadows|resize\\s+shadowstorage)"
+    - "(?i)wmic(\\.exe)?\\s+shadowcopy\\s+delete"
+    - "(?i)wbadmin(\\.exe)?\\s+delete\\s+(catalog|systemstatebackup|backup)"
+    - "(?i)bcdedit(\\.exe)?.*recoveryenabled\\s+no"
+    - "(?i)get-wmiobject\\s+win32_shadowcopy.*delete"
+---
+id: LH-WN14
+title: Many user accounts deleted
+description: Several accounts deleted in a short time — locking people out (sabotage or a destructive attack).
+type: threshold
+severity: high
+mitre: {tactic: Impact, technique: T1531, name: Account Access Removal}
+match: {source: windows, event_id: 4726}
+group_by: host
+threshold: 5
+window: 600
