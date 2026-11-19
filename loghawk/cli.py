@@ -7,6 +7,7 @@
     python -m loghawk.cli rules
     python -m loghawk.cli lint-rules [rules_dir] [--strict]
     python -m loghawk.cli test-rule LH-001 auth.log [--show 10]
+    python -m loghawk.cli report samples/scenario/* -o incident-report.md
     python -m loghawk.cli watch /var/log/auth.log access.log [--from-start] [--min-severity high] [--jsonl alerts.jsonl]
 """
 from __future__ import annotations
@@ -22,6 +23,7 @@ from .parsers import parse_file
 from .pipeline import analyse_files, load_ueba, train_ueba
 from .rules import load_rules
 from .ruletest import format_report, test_rule_on_files
+from .report import to_markdown as report_markdown
 from .search import search
 from .watch import alert_jsonl, watch
 from .coverage import compute as compute_coverage, format_coverage, write_navigator
@@ -48,6 +50,9 @@ def main(argv=None):
     tr.add_argument("rule", help="rule id (e.g. LH-001) or path to a .yml rule file")
     tr.add_argument("files", nargs="+")
     tr.add_argument("--show", type=int, default=5, help="number of sample matching events to print")
+    rp = sub.add_parser("report", help="write a Markdown incident report with timelines and response checklists")
+    rp.add_argument("files", nargs="+"); rp.add_argument("-o", "--output", help="output .md file (default: stdout)")
+    rp.add_argument("--no-ueba", action="store_true")
     w = sub.add_parser("watch", help="follow log files and alert in real time (like tail -F)")
     w.add_argument("files", nargs="+")
     w.add_argument("--from-start", action="store_true", help="process existing content first instead of only new lines")
@@ -61,6 +66,15 @@ def main(argv=None):
         events = [e for f in args.files for e in parse_file(f)]
         u = train_ueba(events, tz_offset_h=args.tz)
         print(f"UEBA trained on {len(events)} events, {len(u.user_mean)} users")
+    elif args.cmd == "report":
+        res = analyse_files(args.files, None if args.no_ueba else load_ueba())
+        md = report_markdown(res, args.files)
+        if args.output:
+            with open(args.output, "w", encoding="utf-8") as fh:
+                fh.write(md)
+            print(f"{res.stats['incidents']} incident(s) -> {args.output}")
+        else:
+            sys.stdout.write(md)
     elif args.cmd == "lint-rules":
         n, problems = lint_directory(args.directory) if args.directory else lint_directory()
         for p in problems:

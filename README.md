@@ -61,6 +61,7 @@ python -m loghawk.cli analyze samples/scenario/*.log samples/scenario/windows_se
 python -m loghawk.cli search samples/scenario/auth.log 'action:sudo command:*shadow*'
 python -m loghawk.cli rules
 python -m loghawk.cli coverage --navigator layer.json
+python -m loghawk.cli report samples/scenario/*.log samples/scenario/windows_security.jsonl -o incident-report.md
 python -m loghawk.cli watch /var/log/auth.log /var/log/nginx/access.log --min-severity high --jsonl alerts.jsonl
 ```
 
@@ -68,6 +69,8 @@ python -m loghawk.cli watch /var/log/auth.log /var/log/nginx/access.log --min-se
 cover each, and any gaps — the bundled rules now cover all 13 tactics that are visible in logs (Resource Development happens on the attacker's side). `--navigator` writes an
 ATT&CK Navigator layer you can upload at https://mitre-attack.github.io/attack-navigator/ to see a heat map; the same
 data is at `GET /api/coverage` and `GET /api/coverage/navigator`.
+
+**Incident report** — `report` writes a Markdown report you can paste into a ticket or hand in: a summary table of incidents by risk, then for each one the kill chain, the IPs/users/hosts involved, a timeline of alerts linked to ATT&CK, and a **response checklist** built from the techniques seen (contain → investigate → eradicate → recover). Brute force means block the IP and enforce MFA, credential dumping means isolate the host and reset passwords, shadow-copy deletion means check your offline backups, and so on.
 
 **Live mode** — `watch` follows log files like `tail -F` (survives logrotate and copytruncate, waits for files
 that don't exist yet) and pushes every new line through the streaming rule engine, printing alerts the moment
